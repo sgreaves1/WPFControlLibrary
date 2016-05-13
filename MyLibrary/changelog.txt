@@ -1,4 +1,10 @@
-Release Notes - MyLibrary - Version 1
+Release Notes - MyLibrary - Version 1.0.0.1
+
+** New Feature
+  *[8] Individual maximums and minimums to the progress bars
+
+
+Release Notes - MyLibrary - Version 1.0.0.0
 
 ** Inital Commit
   *[] Started Progress bar list control
