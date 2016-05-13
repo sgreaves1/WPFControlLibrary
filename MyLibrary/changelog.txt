@@ -1,0 +1,4 @@
+Release Notes - MyLibrary - Version 1
+
+** Inital Commit
+  *[] Started Progress bar list control
