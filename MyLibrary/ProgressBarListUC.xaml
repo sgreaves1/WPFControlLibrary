@@ -27,7 +27,7 @@
                     <StackPanel Margin="10,10,10,10" MinWidth="50">
                         <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
                         <Image Source="{Binding Path=ImageName}" Width="64" Height="64"/>
-                        <ProgressBar Height="10" Minimum="0" Maximum="50" Value="{Binding Path=Value}"/>
+                        <ProgressBar Height="10" Minimum="{Binding Path=MinValue}" Maximum="{Binding Path=MaxValue}" Value="{Binding Path=Value}"/>
                     </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>

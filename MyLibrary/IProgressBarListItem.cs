@@ -5,6 +5,8 @@ namespace MyLibrary
     {
         string Name { get; set; }
         string ImageName { get; set; }
+        int MinValue { get; set; }
         int Value { get; set; }
+        int MaxValue { get; set; }
     }
 }
