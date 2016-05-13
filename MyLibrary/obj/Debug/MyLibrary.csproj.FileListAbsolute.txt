@@ -1,0 +1,12 @@
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\bin\Debug\MyLibrary.dll.config
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\bin\Debug\MyLibrary.dll
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\bin\Debug\MyLibrary.pdb
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary_MarkupCompile.cache
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary.g.resources
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary.Properties.Resources.resources
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary.csproj.GenerateResource.Cache
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary.dll
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary.pdb
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\ProgressBarListUC.g.cs
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\ProgressBarListUC.baml
+C:\own stuff\wpfLibrary\MyLibrary\MyLibrary\obj\Debug\MyLibrary_MarkupCompile.lref
