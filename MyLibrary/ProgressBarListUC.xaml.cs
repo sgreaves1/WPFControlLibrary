@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using MyLibrary.ProgressBarList;
 
 namespace MyLibrary
 {
     /// <summary>
     /// Interaction logic for ProgressBarListUC.xaml
     /// </summary>
-    public partial class ProgressBarListUC : UserControl
+    public partial class ProgressBarListUc 
     {
         public IEnumerable<IProgressBarListItem> ItemsSource
         {
@@ -28,7 +18,7 @@ namespace MyLibrary
 
         // Using a DependencyProperty as the backing store for ListItems.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ItemsSourceProperty =
-            DependencyProperty.Register("ItemsSource", typeof(IEnumerable<IProgressBarListItem>), typeof(ProgressBarListUC), null);
+            DependencyProperty.Register("ItemsSource", typeof(IEnumerable<IProgressBarListItem>), typeof(ProgressBarListUc), null);
         
         public string Title
         {
@@ -38,9 +28,9 @@ namespace MyLibrary
 
         // Using a DependencyProperty as the backing store for Title.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register("Title", typeof(string), typeof(ProgressBarListUC), null);
+            DependencyProperty.Register("Title", typeof(string), typeof(ProgressBarListUc), null);
         
-        public ProgressBarListUC()
+        public ProgressBarListUc()
         {
             InitializeComponent();
         }

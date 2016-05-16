@@ -1,7 +1,8 @@
 Release Notes - MyLibrary - Version 1.0.0.1
 
 ** New Feature
-  *[8] Individual maximums and minimums to the progress bars
+  *[ 8] Individual maximums and minimums to the progress bars
+  *[10] A more organised structure for extra classes and interfaces
 
 
 Release Notes - MyLibrary - Version 1.0.0.0

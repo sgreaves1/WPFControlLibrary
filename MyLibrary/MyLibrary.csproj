@@ -55,11 +55,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DesignProgressBarListItem.cs" />
-    <Compile Include="IProgressBarListItem.cs" />
-    <Compile Include="ProgressBarListUC.xaml.cs">
-      <DependentUpon>ProgressBarListUC.xaml</DependentUpon>
+    <Compile Include="ProgressBarList\IProgressBarListItem.cs" />
+    <Compile Include="ProgressBarListUc.xaml.cs">
+      <DependentUpon>ProgressBarListUc.xaml</DependentUpon>
     </Compile>
-    <Page Include="ProgressBarListUC.xaml">
+    <Page Include="ProgressBarListUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,9 +91,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ProgressBarList\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="changelog.txt" />
   </ItemGroup>

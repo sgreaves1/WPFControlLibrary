@@ -1,4 +1,6 @@
-﻿namespace MyLibrary
+﻿using MyLibrary.ProgressBarList;
+
+namespace MyLibrary
 {
     public class DesignProgressBarListItem
     {
