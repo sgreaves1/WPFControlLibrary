@@ -1,15 +1,15 @@
 ﻿using MyLibrary.ProgressBarList;
 
-namespace MyLibrary
+namespace MyLibrary.DesignClasses
 {
-    public class DesignProgressBarListItem
+    public class DesignProgressBarList
     {
-        public IProgressBarListItem[] ItemsSource => new IProgressBarListItem[] { new DesignItem("Sam", "", 1, 28, 100), new DesignItem("Dave", "", 1, 23, 100)  };
+        public IProgressBarListItem[] ItemsSource => new IProgressBarListItem[] { new DesignProgressBarListItem("Sam", "", 1, 28, 100), new DesignProgressBarListItem("Dave", "", 1, 23, 100) };
 
         public string Title => "Title";
     }
 
-    public class DesignItem : IProgressBarListItem
+    public class DesignProgressBarListItem : IProgressBarListItem
     {
         public string Name { get; set; }
         public string ImageName { get; set; }
@@ -17,7 +17,7 @@ namespace MyLibrary
         public int Value { get; set; }
         public int MaxValue { get; set; }
 
-        public DesignItem(string name, string imageName, int minValue, int value, int maxValue)
+        public DesignProgressBarListItem(string name, string imageName, int minValue, int value, int maxValue)
         {
             Name = name;
             ImageName = imageName;

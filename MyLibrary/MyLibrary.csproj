@@ -54,7 +54,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DesignProgressBarListItem.cs" />
+    <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
     <Compile Include="ProgressBarList\IProgressBarListItem.cs" />
     <Compile Include="ProgressBarListUc.xaml.cs">
       <DependentUpon>ProgressBarListUc.xaml</DependentUpon>

@@ -4,11 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:design="clr-namespace:MyLibrary"
+             xmlns:designClasses="clr-namespace:MyLibrary.DesignClasses"
              mc:Ignorable="d" 
              Width="500"
              Height="500"
              d:DesignHeight="300" d:DesignWidth="300"
-             d:DataContext="{d:DesignInstance Type=design:DesignProgressBarListItem, IsDesignTimeCreatable=True}"
+             d:DataContext="{d:DesignInstance Type=designClasses:DesignProgressBarList, IsDesignTimeCreatable=True}"
              x:Name="Root">
     
     <StackPanel>
