@@ -3,3 +3,5 @@ MyLibrary/obj/Debug/MyLibrary_MarkupCompile.lref
 MyLibrary/obj/Debug/ProgressBarListUc.baml
 MyLibrary/obj/Debug/ProgressBarListUc.g.cs
 MyLibrary/obj/Debug/ProgressBarListUc.g.i.cs
+*.lref
+MyLibrary/obj/Debug/MyLibrary.csproj.FileListAbsolute.txt
