@@ -5,3 +5,13 @@ MyLibrary/obj/Debug/ProgressBarListUc.g.cs
 MyLibrary/obj/Debug/ProgressBarListUc.g.i.cs
 *.lref
 MyLibrary/obj/Debug/MyLibrary.csproj.FileListAbsolute.txt
+MyLibrary/obj/Release/MyLibrary.Properties.Resources.resources
+MyLibrary/bin/Release/MyLibrary.dll.config
+MyLibrary/obj/Release/MyLibrary.csproj.FileListAbsolute.txt
+*.baml
+MyLibrary/obj/Release/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+MyLibrary/obj/Release/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+MyLibrary/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
+MyLibrary/obj/Release/ProgressBarListUc.g.i.cs
+MyLibrary/obj/Release/ProgressBarListUc.g.cs
+MyLibrary/obj/Release/MyLibrary.g.resources
