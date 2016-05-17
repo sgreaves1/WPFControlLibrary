@@ -27,6 +27,18 @@
                     <StackPanel Margin="10,10,10,10" MinWidth="50">
                         <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
                         <Image Source="{Binding Path=ImageName}" Width="64" Height="64"/>
+                        <Label HorizontalAlignment="Center">
+                            <Label.Content>
+                                <TextBlock>
+                                    <TextBlock.Text>
+                                        <MultiBinding StringFormat="{}{0} / {1}">
+                                            <Binding Path="Value"/>
+                                            <Binding Path="MaxValue"/>
+                                        </MultiBinding>
+                                    </TextBlock.Text>
+                                </TextBlock>
+                            </Label.Content>
+                        </Label>
                         <ProgressBar Height="10" Minimum="{Binding Path=MinValue}" Maximum="{Binding Path=MaxValue}" Value="{Binding Path=Value}"/>
                     </StackPanel>
                 </DataTemplate>
