@@ -54,12 +54,12 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DesignProgressBarListItem.cs" />
-    <Compile Include="IProgressBarListItem.cs" />
-    <Compile Include="ProgressBarListUC.xaml.cs">
-      <DependentUpon>ProgressBarListUC.xaml</DependentUpon>
+    <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
+    <Compile Include="ProgressBarList\IProgressBarListItem.cs" />
+    <Compile Include="ProgressBarListUc.xaml.cs">
+      <DependentUpon>ProgressBarListUc.xaml</DependentUpon>
     </Compile>
-    <Page Include="ProgressBarListUC.xaml">
+    <Page Include="ProgressBarListUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -91,8 +91,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ProgressBarList\" />
+    <Resource Include="changelog.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
