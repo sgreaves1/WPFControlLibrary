@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 using System.Windows;
 using MyLibrary.ProgressBarList;
 
@@ -7,7 +9,7 @@ namespace MyLibrary
     /// <summary>
     /// Interaction logic for ProgressBarListUC.xaml
     /// </summary>
-    public partial class ProgressBarListUc 
+    public partial class ProgressBarListUc : INotifyPropertyChanged
     {
         public IEnumerable<IProgressBarListItem> ItemsSource
         {
@@ -24,13 +26,19 @@ namespace MyLibrary
         private static void OnItemsPropertyChanged(DependencyObject source,
         DependencyPropertyChangedEventArgs e)
         {
-            IEnumerable<IProgressBarListItem> items = source as IEnumerable<IProgressBarListItem>;
+            ProgressBarListUc userControl = source as ProgressBarListUc;
 
-            if (items != null)
+            if (userControl != null)
             {
-                foreach (IProgressBarListItem item in items)
+                userControl.Total = 0;
+                userControl.Value = 0;
+                userControl.Minimum = 0;
+
+                foreach (IProgressBarListItem item in userControl.ItemsSource)
                 {
-                    Total += item.MaxValue;
+                    userControl.Total += item.MaxValue;
+                    userControl.Value += item.Value;
+                    userControl.Minimum += item.MinValue;
                 }
             }
         }
@@ -45,17 +53,46 @@ namespace MyLibrary
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(ProgressBarListUc), null);
 
-        private static int _total;
-
-        public static int Total
+        private int Total
         {
-            get { return _total; }
-            set { _total = Total; }
+            get { return (int)GetValue(TotalProperty); }
+            set { SetValue(TotalProperty, value); }
         }
+
+        // Using a DependencyProperty as the backing store for Total.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty TotalProperty =
+            DependencyProperty.Register("Total", typeof(int), typeof(ProgressBarListUc), new PropertyMetadata(0));
+
+        private int Value
+        {
+            get { return (int)GetValue(ValueProperty); }
+            set { SetValue(ValueProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Value.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ValueProperty =
+            DependencyProperty.Register("Value", typeof(int), typeof(ProgressBarListUc), new PropertyMetadata(0));
+
+        private int Minimum
+        {
+            get { return (int)GetValue(MinimumProperty); }
+            set { SetValue(MinimumProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for Minimum.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty MinimumProperty =
+            DependencyProperty.Register("Minimum", typeof(int), typeof(ProgressBarListUc), new PropertyMetadata(0));
 
         public ProgressBarListUc()
         {
-            InitializeComponent();           
+            InitializeComponent();
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

@@ -14,7 +14,7 @@
     <StackPanel>
         <StackPanel>
             <Label Content="{Binding Path=Title}" HorizontalAlignment="Center"/>
-            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total}" Minimum="0" Value="30"/>
+            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}"/>
         </StackPanel>
         
 
