@@ -10,11 +10,14 @@
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance Type=designClasses:DesignProgressBarList, IsDesignTimeCreatable=True}"
              x:Name="Root">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+    </UserControl.Resources>
     
     <StackPanel>
         <StackPanel>
             <Label Content="{Binding Path=Title}" HorizontalAlignment="Center"/>
-            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}"/>
+            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}" Visibility="{Binding Path=IsTotalProgressBarVisible, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
         </StackPanel>
         
 
