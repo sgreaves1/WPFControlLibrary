@@ -12,7 +12,11 @@
              x:Name="Root">
     
     <StackPanel>
-        <Label Content="{Binding Path=Title}"></Label>
+        <StackPanel>
+            <Label Content="{Binding Path=Title}" HorizontalAlignment="Center"/>
+            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total}" Minimum="0" Value="30"/>
+        </StackPanel>
+        
 
         <ItemsControl ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Aqua" BorderThickness="1">
             
