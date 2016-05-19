@@ -32,7 +32,11 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10" MinWidth="50">
-                        <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
+                        <WrapPanel>
+                            <Button Content="x" Width="20" Height="20" HorizontalAlignment="Left" Background="Red" Click="ButtonBase_OnClick"/>
+                            <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
+                        </WrapPanel>
+                        
                         <Image Source="{Binding Path=ImageName}" Width="64" Height="64"/>
                         <Label HorizontalAlignment="Center">
                             <Label.Content>
