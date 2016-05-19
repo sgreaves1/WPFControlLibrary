@@ -17,8 +17,24 @@ namespace MyLibrary
 
         // Using a DependencyProperty as the backing store for ListItems.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ItemsSourceProperty =
-            DependencyProperty.Register("ItemsSource", typeof(IEnumerable<IProgressBarListItem>), typeof(ProgressBarListUc), null);
-        
+            DependencyProperty.Register("ItemsSource", 
+                typeof(IEnumerable<IProgressBarListItem>), 
+                typeof(ProgressBarListUc), new FrameworkPropertyMetadata(null, OnItemsPropertyChanged, null), null);
+
+        private static void OnItemsPropertyChanged(DependencyObject source,
+        DependencyPropertyChangedEventArgs e)
+        {
+            IEnumerable<IProgressBarListItem> items = source as IEnumerable<IProgressBarListItem>;
+
+            if (items != null)
+            {
+                foreach (IProgressBarListItem item in items)
+                {
+                    Total += item.MaxValue;
+                }
+            }
+        }
+
         public string Title
         {
             get { return (string)GetValue(TitleProperty); }
@@ -29,9 +45,9 @@ namespace MyLibrary
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", typeof(string), typeof(ProgressBarListUc), null);
 
-        private int _total;
+        private static int _total;
 
-        public int Total
+        public static int Total
         {
             get { return _total; }
             set { _total = Total; }
