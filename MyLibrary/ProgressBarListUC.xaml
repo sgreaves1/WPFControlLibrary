@@ -33,7 +33,7 @@
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10" MinWidth="50">
                         <WrapPanel>
-                            <Button Content="x" Width="20" Height="20" HorizontalAlignment="Left" Background="Red" Click="ButtonBase_OnClick"/>
+                            <Button Content="x" Width="20" Height="20" HorizontalAlignment="Left" Background="Red" Command="{Binding Path=ClickCommand, ElementName=Root}" CommandParameter="{Binding}"/>
                             <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
                         </WrapPanel>
                         

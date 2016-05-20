@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Input;
 using MyLibrary.ProgressBarList;
 
 namespace MyLibrary
@@ -59,6 +60,13 @@ namespace MyLibrary
                 new PropertyMetadata(false));
 
 
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ClickCommandProperty =
+            DependencyProperty.Register("ClickCommand", 
+                typeof(ICommand), 
+                typeof(ProgressBarListUc), 
+                new PropertyMetadata(null));
+        
 
         public ProgressBarListUc()
         {
@@ -109,6 +117,13 @@ namespace MyLibrary
             get { return (bool)GetValue(TotalProgressBarVisibleProperty); }
             set { SetValue(TotalProgressBarVisibleProperty, value); }
         }
+
+        public ICommand ClickCommand
+        {
+            get { return (ICommand)GetValue(ClickCommandProperty); }
+            set { SetValue(ClickCommandProperty, value); }
+        }
+        
 
         /// <summary>
         /// Property changed function for when one of the items changes
