@@ -66,7 +66,15 @@ namespace MyLibrary
                 typeof(ICommand), 
                 typeof(ProgressBarListUc), 
                 new PropertyMetadata(null));
-        
+
+
+        // Using a DependencyProperty as the backing store for CanUserDeleteItems.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty CanUserDeleteItemsProperty =
+            DependencyProperty.Register("CanUserDeleteItems", 
+                typeof(bool), 
+                typeof(ProgressBarListUc), 
+                new PropertyMetadata(false));
+
 
         public ProgressBarListUc()
         {
@@ -124,6 +132,17 @@ namespace MyLibrary
             set { SetValue(ClickCommandProperty, value); }
         }
         
+        public bool CanUserDeleteItems
+        {
+            get { return (bool)GetValue(CanUserDeleteItemsProperty); }
+            set { SetValue(CanUserDeleteItemsProperty, value); }
+        }
+
+        
+
+
+
+
 
         /// <summary>
         /// Property changed function for when one of the items changes
