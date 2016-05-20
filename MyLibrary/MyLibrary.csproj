@@ -55,10 +55,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
+    <Compile Include="MediaControl.xaml.cs">
+      <DependentUpon>MediaControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBarList\IProgressBarListItem.cs" />
     <Compile Include="ProgressBarListUc.xaml.cs">
       <DependentUpon>ProgressBarListUc.xaml</DependentUpon>
     </Compile>
+    <Page Include="MediaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProgressBarListUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -91,7 +98,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Stop.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="changelog.txt" />
   </ItemGroup>
