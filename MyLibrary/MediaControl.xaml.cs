@@ -24,10 +24,5 @@ namespace MyLibrary
         {
             InitializeComponent();
         }
-
-        private void UIElement_OnMouseEnter(object sender, MouseEventArgs e)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
