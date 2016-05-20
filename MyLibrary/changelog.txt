@@ -1,9 +1,13 @@
 Release Notes - MyLibrary - Version 1.0.0.1
 
 ** New Feature
+  *[ 6] Each item displays its overall progress
+  *[ 7] A total progress bar is added
   *[ 8] Individual maximums and minimums to the progress bars
   *[ 9] Placed design classes into there own folder
   *[10] A more organised structure for extra classes and interfaces
+  *[12] The total progress bar is now optional
+  *[17] A delete button is added to each item
 
 
 Release Notes - MyLibrary - Version 1.0.0.0
