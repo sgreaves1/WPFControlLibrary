@@ -1,6 +1,7 @@
 Release Notes - MyLibrary - Version 1.0.0.1
 
 ** New Feature
+  *[ 4] Added a simple media control bar
   *[ 6] Each item displays its overall progress
   *[ 7] A total progress bar is added
   *[ 8] Individual maximums and minimums to the progress bars
