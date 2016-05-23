@@ -36,11 +36,12 @@
                 </BeginStoryboard>
             </EventTrigger>
         </StackPanel.Triggers>
-        <Button Content="Rewind" Margin="10,10,10,10" Background="Transparent"/>
-        
+
         <Button Margin="10,10,10,10" Background="Transparent">
             <Image Source="Images/Stop.png"/>
-            </Button>
+        </Button>
+        
+        <Button Content="Rewind" Margin="10,10,10,10" Background="Transparent"/>
         
         <Button Content="Play" Margin="10,10,10,10" Background="Transparent"/>
         <Button Content="Forward" Margin="10,10,10,10" Background="Transparent"/>
