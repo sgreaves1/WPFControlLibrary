@@ -1,3 +1,19 @@
+Release Notes - MyLibrary - Version 1.0.3.1
+
+** New Feature
+	*[25] Added an eject button to media control
+
+
+Release Notes - MyLibrary - Version 1.0.3.0
+
+** Updated meta data on nuget package
+
+
+Release Notes - MyLibrary - Version 1.0.2.0
+
+** Created a nuget package for the library
+
+
 Release Notes - MyLibrary - Version 1.0.0.1
 
 ** New Feature
