@@ -1,25 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MyLibrary
 {
     /// <summary>
     /// Interaction logic for MediaControl.xaml
     /// </summary>
-    public partial class MediaControl : UserControl
+    public partial class MediaControl
     {
+
+
+        public ICommand EjectClickCommand
+        {
+            get { return (ICommand)GetValue(EjectClickCommandProperty); }
+            set { SetValue(EjectClickCommandProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for EjectClickCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty EjectClickCommandProperty =
+            DependencyProperty.Register("EjectClickCommand", typeof(ICommand), typeof(MediaControl), new PropertyMetadata(null));
+
+
+
         public MediaControl()
         {
             InitializeComponent();
