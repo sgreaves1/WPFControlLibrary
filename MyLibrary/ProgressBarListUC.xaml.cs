@@ -167,11 +167,5 @@ namespace MyLibrary
                 }
             }
         }
-
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
-        {
-            IProgressBarListItem item = ((FrameworkElement)sender).DataContext as IProgressBarListItem;
-            
-        }
     }
 }
