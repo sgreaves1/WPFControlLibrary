@@ -14,7 +14,7 @@
                     <Storyboard>
                         <DoubleAnimation Storyboard.TargetName="Control"
                                          Storyboard.TargetProperty="Opacity"
-                                         To="1"
+                                         To="0.5"
                                          Duration="0:0:001"
                                          AutoReverse="False"
                                          ></DoubleAnimation>
@@ -37,19 +37,42 @@
             </EventTrigger>
         </StackPanel.Triggers>
 
-        <Button Margin="10,10,10,10" Background="Transparent">
+        <Button Margin="10,10,10,10" 
+                Background="Transparent" 
+                BorderThickness="0"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                Command="{Binding Path=StopClickCommand, ElementName=Root}" 
+                CommandParameter="{Binding}">
             <Image Source="Images/Stop.png"/>
         </Button>
         
-        <Button Content="Rewind" Margin="10,10,10,10" Background="Transparent"/>
+        <Button Content="Rewind" 
+                Margin="10,10,10,10" 
+                Background="Transparent"
+                BorderThickness="0"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
 
-        <Button Margin="10,10,10,10" Background="Transparent" Command="{Binding Path=PlayClickCommand, ElementName=Root}" CommandParameter="{Binding}">
+        <Button Margin="10,10,10,10" 
+                Background="Transparent" 
+                BorderThickness="0"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                Command="{Binding Path=PlayClickCommand, ElementName=Root}" 
+                CommandParameter="{Binding}">
             <Image Source="Images/play.png"/>
         </Button>
         
-        <Button Content="Forward" Margin="10,10,10,10" Background="Transparent"/>
+        <Button Content="Forward"
+                Margin="10,10,10,10" 
+                Background="Transparent"
+                BorderThickness="0"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
 
-        <Button Margin="10,10,10,10" Background="Transparent" Command="{Binding Path=EjectClickCommand, ElementName=Root}" CommandParameter="{Binding}">
+        <Button Margin="10,10,10,10" 
+                Background="Transparent" 
+                BorderThickness="0"
+                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                Command="{Binding Path=EjectClickCommand, ElementName=Root}" 
+                CommandParameter="{Binding}">
             <Image Source="Images/eject.png"/>
         </Button>
     </StackPanel>

@@ -8,6 +8,13 @@ namespace MyLibrary
     /// </summary>
     public partial class MediaControl
     {
+        // Using a DependencyProperty as the backing store for StopClickCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty StopClickCommandProperty =
+            DependencyProperty.Register("StopClickCommand",
+                typeof(ICommand),
+                typeof(MediaControl),
+                new PropertyMetadata(null));
+
         // Using a DependencyProperty as the backing store for PlayClickCommand.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PlayClickCommandProperty =
             DependencyProperty.Register("PlayClickCommand", 
@@ -25,6 +32,12 @@ namespace MyLibrary
         public MediaControl()
         {
             InitializeComponent();
+        }
+
+        public ICommand StopClickCommand
+        {
+            get { return (ICommand)GetValue(StopClickCommandProperty); }
+            set { SetValue(StopClickCommandProperty, value); }
         }
 
         public ICommand PlayClickCommand
