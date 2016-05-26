@@ -4,81 +4,90 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500"
              x:Name="Root">
-    
-    <StackPanel Name="Control" Orientation="Vertical" Background="Azure" Opacity="0.1" >
-        <StackPanel.Triggers>
-            <EventTrigger RoutedEvent="StackPanel.MouseEnter">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation Storyboard.TargetName="Control"
-                                         Storyboard.TargetProperty="Opacity"
-                                         To="0.5"
-                                         Duration="0:0:001"
-                                         AutoReverse="False"
-                                         ></DoubleAnimation>
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
+    <Grid>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="1" Name="Control" Orientation="Vertical" Background="Azure" Opacity="0.1" HorizontalAlignment="Center">
+            <StackPanel.Triggers>
+                <EventTrigger RoutedEvent="StackPanel.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Control"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.5"
+                                             Duration="0:0:001"
+                                             AutoReverse="False"
+                                             ></DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
             
-            <EventTrigger RoutedEvent="StackPanel.MouseLeave">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation Storyboard.TargetName="Control"
-                                         Storyboard.TargetProperty="Opacity"
-                                         To="0.1"
-                                         Duration="0:0:001"
-                                         AutoReverse="False"
-                                         >
-                            </DoubleAnimation>
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-        </StackPanel.Triggers>
+                <EventTrigger RoutedEvent="StackPanel.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="Control"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0.1"
+                                             Duration="0:0:001"
+                                             AutoReverse="False"
+                                             >
+                                </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </StackPanel.Triggers>
+        
+            <Label Content="{Binding Path=FileName}" HorizontalAlignment="Center"/>
+        
+            <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
+        
+            <Button Margin="10,10,10,10" 
+                    Background="Transparent" 
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Command="{Binding Path=StopClickCommand, ElementName=Root}" 
+                    CommandParameter="{Binding}">
+                <Image Source="Images/Stop.png"/>
+            </Button>
+        
+            <Button Content="Rewind" 
+                    Margin="10,10,10,10" 
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
 
-        <Label Content="{Binding Path=FileName}" HorizontalAlignment="Center"/>
+            <Button Margin="10,10,10,10" 
+                    Background="Transparent" 
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Command="{Binding Path=PlayClickCommand, ElementName=Root}" 
+                    CommandParameter="{Binding}">
+                <Image Source="Images/play.png"/>
+            </Button>
         
-        <StackPanel Orientation="Horizontal" Height="50" HorizontalAlignment="Center">
-        
-        <Button Margin="10,10,10,10" 
-                Background="Transparent" 
-                BorderThickness="0"
-                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                Command="{Binding Path=StopClickCommand, ElementName=Root}" 
-                CommandParameter="{Binding}">
-            <Image Source="Images/Stop.png"/>
-        </Button>
-        
-        <Button Content="Rewind" 
-                Margin="10,10,10,10" 
-                Background="Transparent"
-                BorderThickness="0"
-                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
+            <Button Content="Forward"
+                    Margin="10,10,10,10" 
+                    Background="Transparent"
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
 
-        <Button Margin="10,10,10,10" 
-                Background="Transparent" 
-                BorderThickness="0"
-                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                Command="{Binding Path=PlayClickCommand, ElementName=Root}" 
-                CommandParameter="{Binding}">
-            <Image Source="Images/play.png"/>
-        </Button>
+            <Button Margin="10,10,10,10" 
+                    Background="Transparent" 
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Command="{Binding Path=EjectClickCommand, ElementName=Root}" 
+                    CommandParameter="{Binding}">
+                <Image Source="Images/eject.png"/>
+            </Button>
+            </StackPanel>
         
-        <Button Content="Forward"
-                Margin="10,10,10,10" 
-                Background="Transparent"
-                BorderThickness="0"
-                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"/>
-
-        <Button Margin="10,10,10,10" 
-                Background="Transparent" 
-                BorderThickness="0"
-                Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
-                Command="{Binding Path=EjectClickCommand, ElementName=Root}" 
-                CommandParameter="{Binding}">
-            <Image Source="Images/eject.png"/>
-        </Button>
         </StackPanel>
-    </StackPanel>
-    
+    </Grid>
 </UserControl>
