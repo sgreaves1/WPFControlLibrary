@@ -35,7 +35,14 @@ namespace MyLibrary
                 typeof(ICommand),
                 typeof(MediaControl),
                 new PropertyMetadata(null));
-        
+
+        // Using a DependencyProperty as the backing store for IsEjectEnabled.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsEjectEnabledProperty =
+            DependencyProperty.Register("IsEjectEnabled",
+                typeof(bool),
+                typeof(MediaControl),
+                new PropertyMetadata(true));
+
         // Using a DependencyProperty as the backing store for FullScreenClickCommand.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty FullScreenClickCommandProperty =
             DependencyProperty.Register("FullScreenClickCommand", 
@@ -77,6 +84,12 @@ namespace MyLibrary
         {
             get { return (ICommand)GetValue(EjectClickCommandProperty); }
             set { SetValue(EjectClickCommandProperty, value); }
+        }
+
+        public bool IsEjectEnabled
+        {
+            get { return (bool)GetValue(IsEjectEnabledProperty); }
+            set { SetValue(IsEjectEnabledProperty, value); }
         }
 
         public ICommand FullScreenClickCommand
