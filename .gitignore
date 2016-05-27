@@ -17,3 +17,5 @@ MyLibrary/obj/Release/ProgressBarListUc.g.cs
 MyLibrary/obj/Release/MyLibrary.g.resources
 MyLibrary/obj/Release/MediaControl.g.cs
 MyLibrary/obj/Release/MediaControl.g.i.cs
+MyLibrary/obj/Release/GeneratedInternalTypeHelper.g.cs
+MyLibrary/obj/Release/GeneratedInternalTypeHelper.g.i.cs
