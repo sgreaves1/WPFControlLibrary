@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MyLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:MyLibrary.MediaControl">
+            <summary>
+            Interaction logic for MediaControl.xaml
+            </summary>
+            <summary>
+            MediaControl
+            </summary>
+        </member>
+        <member name="P:MyLibrary.MediaControl.IsFullScreenEnabled">
+            <summary>
+            Sets if the FullScreen button can be seen in the view
+            </summary>
+        </member>
+        <member name="M:MyLibrary.MediaControl.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MyLibrary.ProgressBarListUc">
+            <summary>
+            Interaction logic for ProgressBarListUC.xaml
+            </summary>
+            <summary>
+            ProgressBarListUc
+            </summary>
+        </member>
+        <member name="M:MyLibrary.ProgressBarListUc.OnItemsPropertyChanged(System.Windows.DependencyObject,System.Windows.DependencyPropertyChangedEventArgs)">
+            <summary>
+            Property changed function for when one of the items changes
+            </summary>
+            <param name="source"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:MyLibrary.ProgressBarListUc.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:MyLibrary.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:MyLibrary.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:MyLibrary.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
