@@ -43,6 +43,15 @@ namespace MyLibrary
                 typeof(MediaControl), 
                 new PropertyMetadata(null));
 
+        // Using a DependencyProperty as the backing store for IsFullScreenEnabled.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty IsFullScreenEnabledProperty =
+            DependencyProperty.Register("IsFullScreenEnabled", 
+                typeof(bool), 
+                typeof(MediaControl), 
+                new PropertyMetadata(false));
+
+
+
 
         public MediaControl()
         {
@@ -77,6 +86,12 @@ namespace MyLibrary
         {
             get { return (ICommand)GetValue(FullScreenClickCommandProperty); }
             set { SetValue(FullScreenClickCommandProperty, value); }
+        }
+
+        public bool IsFullScreenEnabled
+        {
+            get { return (bool)GetValue(IsFullScreenEnabledProperty); }
+            set { SetValue(IsFullScreenEnabledProperty, value); }
         }
     }
 }
