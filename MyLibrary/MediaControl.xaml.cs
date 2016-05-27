@@ -36,6 +36,14 @@ namespace MyLibrary
                 typeof(MediaControl),
                 new PropertyMetadata(null));
         
+        // Using a DependencyProperty as the backing store for FullScreenClickCommand.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty FullScreenClickCommandProperty =
+            DependencyProperty.Register("FullScreenClickCommand", 
+                typeof(ICommand), 
+                typeof(MediaControl), 
+                new PropertyMetadata(null));
+
+
         public MediaControl()
         {
             InitializeComponent();
@@ -63,6 +71,12 @@ namespace MyLibrary
         {
             get { return (ICommand)GetValue(EjectClickCommandProperty); }
             set { SetValue(EjectClickCommandProperty, value); }
+        }
+
+        public ICommand FullScreenClickCommand
+        {
+            get { return (ICommand)GetValue(FullScreenClickCommandProperty); }
+            set { SetValue(FullScreenClickCommandProperty, value); }
         }
     }
 }

@@ -85,6 +85,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
@@ -297,7 +298,6 @@
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=EjectClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}">
-                <Image Source="Images/eject.png"/>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -335,7 +335,61 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
+                    
+                <Image Source="Images/eject.png"/>
+                    
             </Button>
+                
+                <Button Name="FullScreenButton"
+                        Grid.Column="5"
+                        Grid.Row="0"
+                        Width="30"
+                        Height="30"
+                        Background="Transparent" 
+                        BorderThickness="0"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                        Command="{Binding Path=FullScreenClickCommand, ElementName=Root}" 
+                        CommandParameter="{Binding}">
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="FullScreenButton"
+                                             Storyboard.TargetProperty="Width"
+                                             To="58"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+
+                                    <DoubleAnimation Storyboard.TargetName="FullScreenButton"
+                                             Storyboard.TargetProperty="Height"
+                                             To="50"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="FullScreenButton"
+                                             Storyboard.TargetProperty="Width"
+                                             To="38"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+
+                                    <DoubleAnimation Storyboard.TargetName="FullScreenButton"
+                                             Storyboard.TargetProperty="Height"
+                                             To="30"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                    
+                    <Image Source="Images/fullscreen.png"></Image>
+                </Button>
 
             </Grid>
             
