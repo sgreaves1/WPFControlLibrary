@@ -48,10 +48,7 @@ namespace MyLibrary
             DependencyProperty.Register("IsFullScreenEnabled", 
                 typeof(bool), 
                 typeof(MediaControl), 
-                new PropertyMetadata(false));
-
-
-
+                new PropertyMetadata(true));
 
         public MediaControl()
         {
