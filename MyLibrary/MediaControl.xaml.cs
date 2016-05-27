@@ -98,6 +98,9 @@ namespace MyLibrary
             set { SetValue(FullScreenClickCommandProperty, value); }
         }
 
+        /// <summary>
+        /// Sets if the FullScreen button can be seen in the view
+        /// </summary>
         public bool IsFullScreenEnabled
         {
             get { return (bool)GetValue(IsFullScreenEnabledProperty); }

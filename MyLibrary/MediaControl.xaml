@@ -90,7 +90,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <extended:ColumnDefinitionExtended Visible="{Binding Path=IsEjectEnabled, ElementName=Root}"/>
                     <extended:ColumnDefinitionExtended Visible="{Binding Path=IsFullScreenEnabled, ElementName=Root}"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -303,7 +303,8 @@
                     BorderThickness="0"
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=EjectClickCommand, ElementName=Root}" 
-                    CommandParameter="{Binding}">
+                    CommandParameter="{Binding}"
+                    Visibility="{Binding Path=IsEjectEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
