@@ -107,7 +107,8 @@
                     BorderThickness="0"
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=StopClickCommand, ElementName=Root}" 
-                    CommandParameter="{Binding}">
+                    CommandParameter="{Binding}"
+                    ToolTip="Stop">
                 <Image Source="Images/Stop.png"/>
                 <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -156,7 +157,8 @@
                     Height="20" 
                     Background="Transparent"
                     BorderThickness="0"
-                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                        ToolTip="Rewind">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -205,7 +207,8 @@
                     BorderThickness="0"
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=PlayClickCommand, ElementName=Root}" 
-                    CommandParameter="{Binding}">
+                    CommandParameter="{Binding}"
+                    ToolTip="Play">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -254,7 +257,8 @@
                     Height="20"
                     Background="Transparent"
                     BorderThickness="0"
-                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}">
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    ToolTip="Forward">
                 <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.MouseEnter">
                         <BeginStoryboard>
@@ -304,7 +308,8 @@
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=EjectClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
-                    Visibility="{Binding Path=IsEjectEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
+                    Visibility="{Binding Path=IsEjectEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
+                        ToolTip="Eject">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -357,7 +362,8 @@
                         Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                         Command="{Binding Path=FullScreenClickCommand, ElementName=Root}" 
                         CommandParameter="{Binding}"
-                        Visibility="{Binding Path=IsFullScreenEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
+                        Visibility="{Binding Path=IsFullScreenEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
+                        ToolTip="FullScreens">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
