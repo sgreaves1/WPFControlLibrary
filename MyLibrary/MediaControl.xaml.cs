@@ -8,7 +8,9 @@ namespace MyLibrary
     /// </summary>
     public partial class MediaControl
     {
-        // Using a DependencyProperty as the backing store for FileName.  This enables animation, styling, binding, etc...
+        /// <summary>
+        /// Dependency property for the title.
+        /// </summary>
         public static readonly DependencyProperty TitleProperty =
             DependencyProperty.Register("Title", 
                 typeof(string), 
