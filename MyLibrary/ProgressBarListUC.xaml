@@ -20,8 +20,8 @@
             <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}" Visibility="{Binding Path=IsTotalProgressBarVisible, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
         </StackPanel>
         
-
-        <ItemsControl ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Aqua" BorderThickness="1">
+        <WrapPanel>
+            <ItemsControl ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Aqua" BorderThickness="1">
             
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -55,6 +55,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
+            <Button Width="64" Height="64" Content="Add" Command="{Binding Path=AddItemCommand, ElementName=Root}" CommandParameter="{Binding}"></Button>
+        </WrapPanel>
     </StackPanel>
 </UserControl>

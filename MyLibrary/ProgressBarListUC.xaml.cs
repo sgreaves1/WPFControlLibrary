@@ -74,14 +74,24 @@ namespace MyLibrary
                 typeof(bool), 
                 typeof(ProgressBarListUc), 
                 new PropertyMetadata(false));
+        
+        /// <summary>
+        /// Dependency Property for the add item button command
+        /// </summary>
+        public static readonly DependencyProperty AddItemCommandProperty =
+            DependencyProperty.Register("AddItemCommand", 
+                typeof(ICommand), 
+                typeof(ProgressBarListUc), 
+                new PropertyMetadata(null));
 
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public ProgressBarListUc()
         {
             InitializeComponent();
         }
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -137,8 +147,15 @@ namespace MyLibrary
             get { return (bool)GetValue(CanUserDeleteItemsProperty); }
             set { SetValue(CanUserDeleteItemsProperty, value); }
         }
-
         
+        /// <summary>
+        /// Command that executes when the add button is clicked
+        /// </summary>
+        public ICommand AddItemCommand
+        {
+            get { return (ICommand)GetValue(AddItemCommandProperty); }
+            set { SetValue(AddItemCommandProperty, value); }
+        }
 
 
 
