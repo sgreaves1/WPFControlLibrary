@@ -9,8 +9,8 @@ namespace MyLibrary
     public partial class MediaControl
     {
         // Using a DependencyProperty as the backing store for FileName.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty FileNameProperty =
-            DependencyProperty.Register("FileName", 
+        public static readonly DependencyProperty TitleProperty =
+            DependencyProperty.Register("Title", 
                 typeof(string), 
                 typeof(MediaControl), 
                 new PropertyMetadata(null));
@@ -62,10 +62,13 @@ namespace MyLibrary
             InitializeComponent();
         }
 
-        public string FileName
+        /// <summary>
+        /// The title to be displayed on the control
+        /// </summary>
+        public string Title
         {
-            get { return (string)GetValue(FileNameProperty); }
-            set { SetValue(FileNameProperty, value); }
+            get { return (string)GetValue(TitleProperty); }
+            set { SetValue(TitleProperty, value); }
         }
 
         public ICommand StopClickCommand
@@ -86,6 +89,9 @@ namespace MyLibrary
             set { SetValue(EjectClickCommandProperty, value); }
         }
 
+        /// <summary>
+        /// Sets if the Eject button can be seen in the view
+        /// </summary>
         public bool IsEjectEnabled
         {
             get { return (bool)GetValue(IsEjectEnabledProperty); }
