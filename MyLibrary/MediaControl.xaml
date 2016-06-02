@@ -363,7 +363,7 @@
                         Command="{Binding Path=FullScreenClickCommand, ElementName=Root}" 
                         CommandParameter="{Binding}"
                         Visibility="{Binding Path=IsFullScreenEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
-                        ToolTip="FullScreens">
+                        ToolTip="FullScreen">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
