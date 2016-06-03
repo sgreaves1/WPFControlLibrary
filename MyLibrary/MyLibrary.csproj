@@ -56,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
+    <Compile Include="DesignClasses\DesignPropertiesControlUc.cs" />
     <Compile Include="Extended\ColumnDefinitionExtended.cs" />
     <Compile Include="MediaControl.xaml.cs">
       <DependentUpon>MediaControl.xaml</DependentUpon>
@@ -72,8 +73,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PropertiesControlUc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PropertiesControlUc.xaml.cs">
+      <DependentUpon>PropertiesControlUc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesControl\IPropertiesList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>

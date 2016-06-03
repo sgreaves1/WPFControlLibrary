@@ -21,3 +21,5 @@ MyLibrary/obj/Release/GeneratedInternalTypeHelper.g.cs
 MyLibrary/obj/Release/GeneratedInternalTypeHelper.g.i.cs
 MyLibrary/obj/Release/PropertiesControl.g.i.cs
 MyLibrary/obj/Release/PropertiesControlUc.g.i.cs
+MyLibrary/bin/Release/MyLibrary.XML
+MyLibrary/obj/Release/PropertiesControlUc.g.cs
