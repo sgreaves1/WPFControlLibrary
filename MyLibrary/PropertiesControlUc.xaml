@@ -7,7 +7,7 @@
              d:DesignHeight="300" d:DesignWidth="300"
              x:Name="Root">
     <Grid>
-        <TabControl ItemsSource="{Binding ItemsSource}" DisplayMemberPath="{Binding Path=Name}">
+        <TabControl ItemsSource="{Binding ItemsSource, ElementName=Root}" DisplayMemberPath="{Binding Path=Name}">
                 <TabControl.ItemTemplate>
                     <DataTemplate>
                     <TextBlock Text="{Binding Path=Name}"></TextBlock>
