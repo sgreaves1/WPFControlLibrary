@@ -17,8 +17,12 @@
             <TabControl.ContentTemplate>
                 <DataTemplate>
                     <DataGrid ItemsSource="{Binding Path=PropertyList}"
-                              CanUserAddRows="False">
-                        </DataGrid>
+                              CanUserAddRows="False"
+                              AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Name" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </DataTemplate>
             </TabControl.ContentTemplate>
             </TabControl>
