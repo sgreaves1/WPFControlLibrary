@@ -6,6 +6,6 @@ namespace MyLibrary.PropertiesControl
     {
         string Name { get; set; }
         
-        ObservableCollection<IProperty> PropertyList { get; set; } 
+        ObservableCollection<IPropertyBase> PropertyList { get; set; } 
     }
 }

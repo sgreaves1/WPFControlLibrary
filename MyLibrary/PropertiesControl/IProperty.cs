@@ -1,13 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿
 namespace MyLibrary.PropertiesControl
 {
-    public class IProperty
+    /// <summary>
+    /// Interface to describe what each property in the control needs
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    public interface IProperty<T> : IPropertyBase
     {
-        public string Name { get; set; }
+        /// <summary>
+        /// Data and type of the property
+        /// </summary>
+        T Data { get; set; }
     }
 }

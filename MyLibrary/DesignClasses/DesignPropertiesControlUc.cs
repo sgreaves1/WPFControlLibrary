@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Runtime.InteropServices.ComTypes;
 using MyLibrary.PropertiesControl;
 
 namespace MyLibrary.DesignClasses
@@ -7,9 +8,9 @@ namespace MyLibrary.DesignClasses
     {
         public IPropertiesList[] ItemsSource => new IPropertiesList[]
         {
-            new DesignPropertiesControlList("Properties", new ObservableCollection<IProperty>() {new DesignPropertiesControlItem("Eject")}),
-            new DesignPropertiesControlList("Data", new ObservableCollection<IProperty>()),
-            new DesignPropertiesControlList("Style", new ObservableCollection<IProperty>()),
+            new DesignPropertiesControlList("Properties", new ObservableCollection<IPropertyBase>() {new DesignPropertiesControlItem<bool>() {Name = "Eject", Data = true} }),
+            new DesignPropertiesControlList("Data", new ObservableCollection<IPropertyBase>()),
+            new DesignPropertiesControlList("Style", new ObservableCollection<IPropertyBase>()),
         };
     }
 
@@ -17,22 +18,18 @@ namespace MyLibrary.DesignClasses
     {
         public string Name { get; set; }
 
-        public ObservableCollection<IProperty> PropertyList { get; set; }
+        public ObservableCollection<IPropertyBase> PropertyList { get; set; }
 
-        public DesignPropertiesControlList(string name, ObservableCollection<IProperty> list )
+        public DesignPropertiesControlList(string name, ObservableCollection<IPropertyBase> list )
         {
             Name = name;
             PropertyList = list;
         }
     }
 
-    public class DesignPropertiesControlItem : IProperty
+    public class DesignPropertiesControlItem<T> : IProperty<T>
     {
         public string Name { get; set; }
-
-        public DesignPropertiesControlItem(string name)
-        {
-            Name = name;
-        }
+        public T Data { get; set; }
     }
 }
