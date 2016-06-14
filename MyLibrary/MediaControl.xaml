@@ -407,7 +407,7 @@
 
             </Grid>
 
-            <Label Content="{Binding Path=PlayTime, ElementName=Root}" HorizontalAlignment="Center"/>
+            <TextBlock Text="{Binding Path=PlayTime, StringFormat={}{0:hh':'mm':'ss}, ElementName=Root}" HorizontalAlignment="Center"/>
 
         </StackPanel>
     </Grid>

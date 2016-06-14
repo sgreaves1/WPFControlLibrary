@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MyLibrary
@@ -22,7 +23,7 @@ namespace MyLibrary
         /// </summary>
         public static readonly DependencyProperty PlayTimeProperty =
             DependencyProperty.Register("PlayTime", 
-                typeof(string), 
+                typeof(TimeSpan), 
                 typeof(MediaControl), 
                 new PropertyMetadata(null));
 
@@ -85,9 +86,9 @@ namespace MyLibrary
         /// <summary>
         /// The play time to be displayed on the control
         /// </summary>
-        public string PlayTime
+        public TimeSpan PlayTime
         {
-            get { return (string)GetValue(PlayTimeProperty); }
+            get { return (TimeSpan)GetValue(PlayTimeProperty); }
             set { SetValue(PlayTimeProperty, value); }
         }
 
