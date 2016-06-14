@@ -81,8 +81,8 @@
                     </BeginStoryboard>
                 </EventTrigger>
             </StackPanel.Triggers>
-            
-            <Label Content="{Binding Path=FileName}" HorizontalAlignment="Center"/>
+
+            <Label Content="{Binding Path=Title, ElementName=Root}" HorizontalAlignment="Center"/>
         
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -406,8 +406,8 @@
                 </Button>
 
             </Grid>
-            
-            <Label Content="Time" HorizontalAlignment="Center"/>
+
+            <Label Content="{Binding Path=PlayTime, ElementName=Root}" HorizontalAlignment="Center"/>
 
         </StackPanel>
     </Grid>

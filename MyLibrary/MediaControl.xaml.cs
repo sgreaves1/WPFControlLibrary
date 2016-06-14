@@ -16,7 +16,16 @@ namespace MyLibrary
                 typeof(string), 
                 typeof(MediaControl), 
                 new PropertyMetadata(null));
-        
+
+        /// <summary>
+        /// Dependency property for the play time.
+        /// </summary>
+        public static readonly DependencyProperty PlayTimeProperty =
+            DependencyProperty.Register("PlayTime", 
+                typeof(string), 
+                typeof(MediaControl), 
+                new PropertyMetadata(null));
+
         // Using a DependencyProperty as the backing store for StopClickCommand.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty StopClickCommandProperty =
             DependencyProperty.Register("StopClickCommand",
@@ -71,6 +80,15 @@ namespace MyLibrary
         {
             get { return (string)GetValue(TitleProperty); }
             set { SetValue(TitleProperty, value); }
+        }
+
+        /// <summary>
+        /// The play time to be displayed on the control
+        /// </summary>
+        public string PlayTime
+        {
+            get { return (string)GetValue(PlayTimeProperty); }
+            set { SetValue(PlayTimeProperty, value); }
         }
 
         public ICommand StopClickCommand
