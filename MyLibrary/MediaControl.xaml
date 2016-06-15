@@ -84,7 +84,18 @@
 
             <Label Content="{Binding Path=Title, ElementName=Root}" 
                    HorizontalAlignment="Center"
-                   Visibility="{Binding Path=IsTitleShown, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
+                   Visibility="{Binding Path=IsTitleShown, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Title, ElementName=Root}" Value="{x:Null}">
+                                <Setter Property="Visibility" Value="Collapsed"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+
+            </Label>
         
             <Grid>
                 <Grid.ColumnDefinitions>
