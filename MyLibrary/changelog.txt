@@ -1,7 +1,17 @@
-Release Notes - MyLibrary - Version 1.0.3.1
+Release Notes - MyLibrary - Version 1.0.4.0
 
 ** New Feature
-	*[25] Added an eject button to media control
+	*[15] Progress Bar List - Can now turn off the delete buttons	
+	*[25] Media Control - Added an eject button
+	*[26] Media Control - Can now turn the eject button on and off
+	*[27] Media Control - Added a play button	
+	*[28] Media Control - Added a title 
+	*[29] Media Control - Added a play time label
+	*[31] Media Control - Added a stop button
+	*[34] Media Control - Hover effect on buttons	
+	*[35] Media Control - Added a full screen button
+	*[36] Media Control - Can now turn the full screen button on and off
+	*[37] Media Control - Added a tool tip to each button
 
 
 Release Notes - MyLibrary - Version 1.0.3.0
