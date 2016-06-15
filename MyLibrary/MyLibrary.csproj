@@ -33,6 +33,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\MyLibrary.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject />
@@ -55,16 +56,35 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
+    <Compile Include="DesignClasses\DesignPropertiesControlUc.cs" />
+    <Compile Include="Extended\ColumnDefinitionExtended.cs" />
+    <Compile Include="MediaControl.xaml.cs">
+      <DependentUpon>MediaControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBarList\IProgressBarListItem.cs" />
     <Compile Include="ProgressBarListUc.xaml.cs">
       <DependentUpon>ProgressBarListUc.xaml</DependentUpon>
     </Compile>
+    <Page Include="MediaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProgressBarListUc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PropertiesControlUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PropertiesControlUc.xaml.cs">
+      <DependentUpon>PropertiesControlUc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertiesControl\IPropertiesList.cs" />
+    <Compile Include="PropertiesControl\IProperty.cs" />
+    <Compile Include="PropertiesControl\IPropertyBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -91,9 +111,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\Stop.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="changelog.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\eject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\fullscreen.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

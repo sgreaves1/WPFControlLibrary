@@ -1,9 +1,40 @@
+Release Notes - MyLibrary - Version 1.0.4.0
+
+** New Feature
+	*[15] Progress Bar List - Can now turn off the delete buttons	
+	*[25] Media Control - Added an eject button
+	*[26] Media Control - Can now turn the eject button on and off
+	*[27] Media Control - Added a play button	
+	*[28] Media Control - Added a title 
+	*[29] Media Control - Added a play time label
+	*[31] Media Control - Added a stop button
+	*[34] Media Control - Hover effect on buttons	
+	*[35] Media Control - Added a full screen button
+	*[36] Media Control - Can now turn the full screen button on and off
+	*[37] Media Control - Added a tool tip to each button
+
+
+Release Notes - MyLibrary - Version 1.0.3.0
+
+** Updated meta data on nuget package
+
+
+Release Notes - MyLibrary - Version 1.0.2.0
+
+** Created a nuget package for the library
+
+
 Release Notes - MyLibrary - Version 1.0.0.1
 
 ** New Feature
+  *[ 4] Added a simple media control bar
+  *[ 6] Each item displays its overall progress
+  *[ 7] A total progress bar is added
   *[ 8] Individual maximums and minimums to the progress bars
   *[ 9] Placed design classes into there own folder
   *[10] A more organised structure for extra classes and interfaces
+  *[12] The total progress bar is now optional
+  *[17] A delete button is added to each item
 
 
 Release Notes - MyLibrary - Version 1.0.0.0

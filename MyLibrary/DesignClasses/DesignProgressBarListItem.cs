@@ -7,6 +7,8 @@ namespace MyLibrary.DesignClasses
         public IProgressBarListItem[] ItemsSource => new IProgressBarListItem[] { new DesignProgressBarListItem("Sam", "", 1, 28, 100), new DesignProgressBarListItem("Dave", "", 1, 23, 100) };
 
         public string Title => "Title";
+
+        public bool IsTotalProgressBarVisible => true;
     }
 
     public class DesignProgressBarListItem : IProgressBarListItem

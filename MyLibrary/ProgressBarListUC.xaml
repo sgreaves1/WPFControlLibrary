@@ -10,11 +10,23 @@
              d:DesignHeight="300" d:DesignWidth="300"
              d:DataContext="{d:DesignInstance Type=designClasses:DesignProgressBarList, IsDesignTimeCreatable=True}"
              x:Name="Root">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BoolToVisConverter"/>
+    </UserControl.Resources>
     
     <StackPanel>
-        <Label Content="{Binding Path=Title}"></Label>
-
-        <ItemsControl ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Aqua" BorderThickness="1">
+        <StackPanel>
+            <Label Content="{Binding Path=Title}" HorizontalAlignment="Center"/>
+            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}" Visibility="{Binding Path=IsTotalProgressBarVisible, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
+        </StackPanel>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+                
+            <ItemsControl Grid.Column="0" ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Aqua" BorderThickness="1">
             
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -25,7 +37,11 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10" MinWidth="50">
-                        <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
+                        <WrapPanel>
+                            <Button Content="x" Width="20" Height="20" HorizontalAlignment="Left" Background="Red" Command="{Binding Path=ClickCommand, ElementName=Root}" CommandParameter="{Binding}" Visibility="{Binding Path=CanUserDeleteItems, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
+                            <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
+                        </WrapPanel>
+                        
                         <Image Source="{Binding Path=ImageName}" Width="64" Height="64"/>
                         <Label HorizontalAlignment="Center">
                             <Label.Content>
@@ -44,6 +60,7 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-        
+            <Button Grid.Column="1" Width="64" Height="64" Content="Add" Command="{Binding Path=AddItemCommand, ElementName=Root}" CommandParameter="{Binding}"/>
+        </Grid>
     </StackPanel>
 </UserControl>
