@@ -25,3 +25,4 @@ MyLibrary/bin/Release/MyLibrary.XML
 MyLibrary/obj/Release/PropertiesControlUc.g.cs
 MyLibrary/obj/Debug/MediaControl.g.i.cs
 MyLibrary/obj/Debug/PropertiesControlUc.g.i.cs
+*.g.cs
