@@ -82,7 +82,9 @@
                 </EventTrigger>
             </StackPanel.Triggers>
 
-            <Label Content="{Binding Path=Title, ElementName=Root}" HorizontalAlignment="Center"/>
+            <Label Content="{Binding Path=Title, ElementName=Root}" 
+                   HorizontalAlignment="Center"
+                   Visibility="{Binding Path=IsTitleShown, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
         
             <Grid>
                 <Grid.ColumnDefinitions>

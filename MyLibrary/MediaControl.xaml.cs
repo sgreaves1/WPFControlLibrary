@@ -68,6 +68,15 @@ namespace MyLibrary
                 typeof(bool), 
                 typeof(MediaControl), 
                 new PropertyMetadata(true));
+        
+        /// <summary>
+        /// Dependency property for showing the title
+        /// </summary>
+        public static readonly DependencyProperty IsTitleShownProperty =
+            DependencyProperty.Register("IsTitleShown", 
+                typeof(bool), 
+                typeof(MediaControl), 
+                new PropertyMetadata(true));
 
         public MediaControl()
         {
@@ -132,6 +141,15 @@ namespace MyLibrary
         {
             get { return (bool)GetValue(IsFullScreenEnabledProperty); }
             set { SetValue(IsFullScreenEnabledProperty, value); }
+        }
+
+        /// <summary>
+        /// Hides or shows the title text
+        /// </summary>
+        public bool IsTitleShown
+        {
+            get { return (bool)GetValue(IsTitleShownProperty); }
+            set { SetValue(IsTitleShownProperty, value); }
         }
     }
 }
