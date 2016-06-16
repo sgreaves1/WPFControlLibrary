@@ -1,5 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows.Controls;
+using System.Windows.Input;
+using LibrarySamples.Command;
 using LibrarySamples.Pages.Home;
 using LibrarySamples.Pages.MediaControl;
 using LibrarySamples.Pages.ProgressList;
@@ -18,6 +20,7 @@ namespace LibrarySamples.ViewModel
         {
             _frame = frame;
             GoHome();
+            InitCommands();
             GetModels();
         }
 
@@ -94,5 +97,31 @@ namespace LibrarySamples.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        #region Commands
+        public void InitCommands()
+        {
+            HomePageCommand = new RelayCommand(ExecuteHomePageCommand, CanExecuteHomePageCommand);
+        }
+
+        public ICommand HomePageCommand { get; private set; }
+
+        public bool CanExecuteHomePageCommand()
+        {
+            if (_currentPage.GetType() != typeof(HomePage))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public void ExecuteHomePageCommand()
+        {
+            GoHome();
+            SelectedPage = null;
+        }
+
+        #endregion
     }
 }
