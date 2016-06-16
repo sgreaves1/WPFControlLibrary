@@ -24,6 +24,7 @@
                                 Title="{Binding Path=FileName}"
                                 StopClickCommand="{Binding Path=StopCommand}"
                                 PlayClickCommand="{Binding Path=PlayCommand}" 
-                                EjectClickCommand="{Binding Path=EjectCommand}"/>
+                                EjectClickCommand="{Binding Path=EjectCommand}"
+                                FullScreenClickCommand="{Binding Path=FullScreenCommand}"/>
     </Grid>
 </Page>
