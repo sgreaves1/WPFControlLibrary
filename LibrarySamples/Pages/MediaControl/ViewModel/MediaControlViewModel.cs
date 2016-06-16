@@ -11,11 +11,15 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
     {
         private string _filename;
         private TimeSpan _playTime;
+        private bool _isFullScreenEnabled;
+        private bool _isEjectEnabled;
 
         public MediaControlViewModel()
         {
             InitCommands();
             FileName = "No Video";
+            IsFullScreenEnabled = true;
+            IsEjectEnabled = true;
         }
 
         // Event handlers to be fired by the view model to update the media element
@@ -40,6 +44,26 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             set
             {
                 _playTime = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsFullScreenEnabled
+        {
+            get { return _isFullScreenEnabled; }
+            set
+            {
+                _isFullScreenEnabled = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public bool IsEjectEnabled
+        {
+            get { return _isEjectEnabled; }
+            set
+            {
+                _isEjectEnabled = value;
                 OnPropertyChanged();
             }
         }

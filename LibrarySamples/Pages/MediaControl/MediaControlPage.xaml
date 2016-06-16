@@ -3,7 +3,6 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:LibrarySamples.Pages.MediaControl"
       xmlns:myLibrary="clr-namespace:MyLibrary;assembly=MyLibrary"
       mc:Ignorable="d" 
       d:DesignHeight="300" d:DesignWidth="300"
@@ -26,6 +25,8 @@
                                 StopClickCommand="{Binding Path=StopCommand}"
                                 PlayClickCommand="{Binding Path=PlayCommand}" 
                                 EjectClickCommand="{Binding Path=EjectCommand}"
-                                FullScreenClickCommand="{Binding Path=FullScreenCommand}"/>
+                                FullScreenClickCommand="{Binding Path=FullScreenCommand}"
+                                IsEjectEnabled="{Binding Path=IsEjectEnabled}"
+                                IsFullScreenEnabled="{Binding Path=IsFullScreenEnabled}"/>
     </Grid>
 </Page>
