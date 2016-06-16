@@ -62,6 +62,12 @@
     <Compile Include="Pages\Home\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\MediaControl\MediaControlPage.xaml.cs">
+      <DependentUpon>MediaControlPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ProgressList\ProgressListPage.xaml.cs">
+      <DependentUpon>ProgressListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DesignerMainWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
@@ -78,6 +84,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\Home\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\MediaControl\MediaControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ProgressList\ProgressListPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
