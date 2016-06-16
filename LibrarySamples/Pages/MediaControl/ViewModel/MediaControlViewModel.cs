@@ -16,6 +16,9 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             FileName = "No Video";
         }
 
+        // Event handlers to be fired by the view model to update the media element
+        public event EventHandler PlayRequested;
+
         public string FileName
         {
             get { return _filename; }
@@ -29,10 +32,22 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         #region commands
         public void InitCommands()
         {
+            PlayCommand = new DelegateCommand(ExecutePlayCommand, CanExecutePlayCommand);
             EjectCommand = new DelegateCommand(ExecuteEjectCommand, CanExecuteEjectCommand);
         }
 
+        public ICommand PlayCommand { get; private set; }
         public ICommand EjectCommand { get; private set; }
+
+        public bool CanExecutePlayCommand(object parameter)
+        {
+            return true;
+        }
+
+        public void ExecutePlayCommand(object parameter)
+        {
+            PlayRequested?.Invoke(this, EventArgs.Empty);
+        }
 
         public bool CanExecuteEjectCommand(object parameter)
         {
