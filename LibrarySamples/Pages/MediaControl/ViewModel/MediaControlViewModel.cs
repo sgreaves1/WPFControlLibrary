@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using LibrarySamples.Command;
 using LibrarySamples.ViewModel;
@@ -9,6 +10,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
     public class MediaControlViewModel : BaseViewModel
     {
         private string _filename;
+        private TimeSpan _playTime;
 
         public MediaControlViewModel()
         {
@@ -20,6 +22,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public event EventHandler StopRequested;
         public event EventHandler PlayRequested;
         public event EventHandler FullScreenRequested;
+        public event EventHandler UpdateTime;
 
         public string FileName
         {
@@ -27,6 +30,16 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             set
             {
                 _filename = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public TimeSpan PlayTime
+        {
+            get { return _playTime; }
+            set
+            {
+                _playTime = value;
                 OnPropertyChanged();
             }
         }
@@ -79,6 +92,18 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             if (result == true)
             {
                 FileName = dlg.FileName;
+
+                FireTimeEvent();
+            }
+        }
+
+        private async void FireTimeEvent()
+        {
+            while (FileName != "No Video")
+            {
+                await Task.Delay(100);
+
+                UpdateTime?.Invoke(this, EventArgs.Empty);
             }
         }
 

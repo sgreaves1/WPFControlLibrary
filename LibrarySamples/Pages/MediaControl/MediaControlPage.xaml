@@ -22,6 +22,7 @@
         <myLibrary:MediaControl Grid.Row="1" 
                                 VerticalAlignment="Bottom"
                                 Title="{Binding Path=FileName}"
+                                PlayTime="{Binding Path=PlayTime}"
                                 StopClickCommand="{Binding Path=StopCommand}"
                                 PlayClickCommand="{Binding Path=PlayCommand}" 
                                 EjectClickCommand="{Binding Path=EjectCommand}"

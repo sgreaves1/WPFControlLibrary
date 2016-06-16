@@ -30,6 +30,11 @@ namespace LibrarySamples.Pages.MediaControl
             {
 
             };
+
+            ViewModel.UpdateTime += (sender, args) =>
+            {
+                ViewModel.PlayTime = VideoPlayer.Position;
+            };
         }
 
         public MediaControlViewModel ViewModel
