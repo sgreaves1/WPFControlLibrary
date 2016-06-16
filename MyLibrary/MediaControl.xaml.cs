@@ -78,6 +78,17 @@ namespace MyLibrary
                 typeof(MediaControl), 
                 new PropertyMetadata(true));
 
+        /// <summary>
+        /// Dependency property for showing the play time
+        /// </summary>
+        public static readonly DependencyProperty IsPlayTimeShownProperty =
+            DependencyProperty.Register("IsPlayTimeShown", 
+                typeof(bool), 
+                typeof(MediaControl), 
+                new PropertyMetadata(true));
+
+
+
         public MediaControl()
         {
             InitializeComponent();
@@ -150,6 +161,15 @@ namespace MyLibrary
         {
             get { return (bool)GetValue(IsTitleShownProperty); }
             set { SetValue(IsTitleShownProperty, value); }
+        }
+
+        /// <summary>
+        /// Hides or shows the play time of the video
+        /// </summary>
+        public bool IsPlayTimeShown
+        {
+            get { return (bool)GetValue(IsPlayTimeShownProperty); }
+            set { SetValue(IsPlayTimeShownProperty, value); }
         }
     }
 }
