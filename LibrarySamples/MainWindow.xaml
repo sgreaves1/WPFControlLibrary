@@ -25,5 +25,15 @@
 
         <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Width="110" ItemsSource="{Binding Path=PageList}" SelectedItem="{Binding Path=SelectedPage}" DisplayMemberPath="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"/>
 
+        <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Width="5" HorizontalAlignment="Stretch"/>
+
+        <Frame Grid.Column="2" x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" Margin="10,10,10,10"/>
+
+        <StackPanel Grid.Column="2" Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Content="Control" Width="40" Height="20" Margin="10,10,10,10"></Button>
+            <Button Content="?" Width="40" Height="20" Margin="10,10,10,10"></Button>
+            <Button Content="edit" Width="40" Height="20" Margin="10,10,10,10"></Button>
+        </StackPanel>
+        
     </Grid>
 </Window>
