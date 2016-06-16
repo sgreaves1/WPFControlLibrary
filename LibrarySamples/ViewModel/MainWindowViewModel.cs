@@ -8,6 +8,7 @@ namespace LibrarySamples.ViewModel
     {
         private Model.Model _selectedPage;
         private ObservableCollection<Model.Model> _pageList = new ObservableCollection<Model.Model>();
+        private string _controlTitle;
         private Page _currentPage;
         private Frame _frame;
 
@@ -20,6 +21,7 @@ namespace LibrarySamples.ViewModel
         public void GoHome()
         {
             _currentPage = new HomePage();
+            ControlTitle = "Home";
             GoToPage();
         }
 
@@ -44,6 +46,16 @@ namespace LibrarySamples.ViewModel
             set
             {
                 _pageList = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string ControlTitle
+        {
+            get { return _controlTitle; }
+            set
+            {
+                _controlTitle = value;
                 OnPropertyChanged();
             }
         }

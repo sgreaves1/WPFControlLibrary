@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Button Grid.Column="0" Grid.Row="0" Content="Home" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"/>
-        <Label Grid.Column="2" Grid.Row="0" Content="Home" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10"/>
+        <Label Grid.Column="2" Grid.Row="0" Content="{Binding Path=ControlTitle}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10"/>
 
         <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Width="110" ItemsSource="{Binding Path=PageList}" SelectedItem="{Binding Path=SelectedPage}" DisplayMemberPath="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"/>
 
