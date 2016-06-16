@@ -11,7 +11,7 @@ namespace LibrarySamples
         {
             InitializeComponent();
 
-            DataContext = new MainWindowViewModel();
+            DataContext = new MainWindowViewModel(MainFrame);
         }
     }
 }
