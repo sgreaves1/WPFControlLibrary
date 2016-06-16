@@ -25,6 +25,11 @@ namespace LibrarySamples.Pages.MediaControl
             {
                 VideoPlayer.Play();
             };
+
+            ViewModel.FullScreenRequested += (sender, args) =>
+            {
+
+            };
         }
 
         public MediaControlViewModel ViewModel
