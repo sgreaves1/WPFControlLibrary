@@ -16,6 +16,11 @@ namespace LibrarySamples.Pages.MediaControl
             ViewModel = new MediaControlViewModel();
             DataContext = ViewModel;
 
+            ViewModel.StopRequested += (sender, args) =>
+            {
+                VideoPlayer.Close();
+            };
+
             ViewModel.PlayRequested += (sender, args) =>
             {
                 VideoPlayer.Play();

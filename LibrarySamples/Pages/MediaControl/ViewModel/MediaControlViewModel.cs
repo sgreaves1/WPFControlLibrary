@@ -17,6 +17,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         }
 
         // Event handlers to be fired by the view model to update the media element
+        public event EventHandler StopRequested;
         public event EventHandler PlayRequested;
 
         public string FileName
@@ -32,12 +33,24 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         #region commands
         public void InitCommands()
         {
+            StopCommand = new DelegateCommand(ExecuteStopCommand, CanExecuteStopCommand);
             PlayCommand = new DelegateCommand(ExecutePlayCommand, CanExecutePlayCommand);
             EjectCommand = new DelegateCommand(ExecuteEjectCommand, CanExecuteEjectCommand);
         }
 
+        public ICommand StopCommand { get; private set; }
         public ICommand PlayCommand { get; private set; }
         public ICommand EjectCommand { get; private set; }
+
+        public bool CanExecuteStopCommand(object parameter)
+        {
+            return true;
+        }
+
+        public void ExecuteStopCommand(object parameter)
+        {
+            StopRequested?.Invoke(this, EventArgs.Empty);
+        }
 
         public bool CanExecutePlayCommand(object parameter)
         {
