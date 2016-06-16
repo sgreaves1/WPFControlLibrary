@@ -16,9 +16,12 @@
         </Grid.RowDefinitions>
 
         <MediaElement Name="VideoPlayer" Grid.Row="0" Grid.RowSpan="2" 
-                      LoadedBehavior="Manual" />
+                      LoadedBehavior="Manual"
+                      Source="{Binding Path=FileName}"/>
 
         <myLibrary:MediaControl Grid.Row="1" 
-                                VerticalAlignment="Bottom"/>
+                                VerticalAlignment="Bottom"
+                                Title="{Binding Path=FileName}"
+                                EjectClickCommand="{Binding Path=EjectCommand}"/>
     </Grid>
 </Page>

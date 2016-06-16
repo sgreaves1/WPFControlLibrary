@@ -1,28 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using LibrarySamples.Pages.MediaControl.ViewModel;
 
 namespace LibrarySamples.Pages.MediaControl
 {
     /// <summary>
     /// Interaction logic for MediaControlPage.xaml
     /// </summary>
-    public partial class MediaControlPage : Page
+    public partial class MediaControlPage 
     {
+        private MediaControlViewModel _viewModel;
+
         public MediaControlPage()
         {
             InitializeComponent();
+
+            ViewModel = new MediaControlViewModel();
+            DataContext = ViewModel;
+        }
+
+        public MediaControlViewModel ViewModel
+        {
+            get { return _viewModel; }
+            set { _viewModel = value; }
         }
     }
 }
