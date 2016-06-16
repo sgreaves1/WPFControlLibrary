@@ -5,7 +5,7 @@ Version 1.0.4.0
 
 Please feel free to contribute!
 
-In case you wise to join in Kanban board link:
+In case you wish to join in Kanban board link:
 Kanban board : https://sams.mingle.thoughtworks.com/projects/wpf_controls/cards/grid?color_by=Priority&favorite_id=2&filters%5B%5D=%5BType%5D%5Bis%5D%5BStory%5D&group_by%5Blane%5D=Status&lanes=New%2CIn+progress%2CUpdate+ChangeLog%2CComplete%2CUpdate+Website&tab=Card+Wall
 
 # Controls #
