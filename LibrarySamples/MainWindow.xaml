@@ -8,6 +8,20 @@
         Title="MainWindow" Height="650" Width="725"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Column="0" Grid.Row="0" Content="Home" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"/>
+        <Label Grid.Column="2" Grid.Row="0" Content="Home" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10"/>
         
     </Grid>
 </Window>
