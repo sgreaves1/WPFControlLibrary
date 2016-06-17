@@ -2,6 +2,7 @@ Release Notes - MyLibrary - Version 1.0.4.1
 
 ** New Feature
 	*[32] Media Control - Title can now be switched off
+	*[40] Media Control - Play time can now be switched off
 
 
 Release Notes - MyLibrary - Version 1.0.4.0
