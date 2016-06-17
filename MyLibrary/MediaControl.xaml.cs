@@ -95,6 +95,46 @@ namespace MyLibrary
                 typeof(string), typeof(MediaControl),
                 new PropertyMetadata("Stops the media."));
 
+        /// <summary>
+        /// Dependency property for the rewind buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty RewindToolTipMessageProperty =
+            DependencyProperty.Register("RewindToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Rewinds the media."));
+
+        /// <summary>
+        /// Dependency property for the play buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty PlayToolTipMessageProperty =
+            DependencyProperty.Register("PlayToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Plays the media."));
+
+        /// <summary>
+        /// Dependency property for the forward buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty ForwardToolTipMessageProperty =
+            DependencyProperty.Register("ForwardToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Fast Forwards the media."));
+
+        /// <summary>
+        /// Dependency property for the eject buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty EjectToolTipMessageProperty =
+            DependencyProperty.Register("EjectToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Ejects the media."));
+
+        /// <summary>
+        /// Dependency property for the full screen buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty FullScreenToolTipMessageProperty =
+            DependencyProperty.Register("FullScreenToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Puts the media into full screen mode."));
+
 
 
         public MediaControl()
@@ -187,6 +227,51 @@ namespace MyLibrary
         {
             get { return (string)GetValue(StopToolTipMessageProperty); }
             set { SetValue(StopToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Message to be displayed on the Rewind buttons tool tip
+        /// </summary>
+        public string RewindToolTipMessage
+        {
+            get { return (string)GetValue(RewindToolTipMessageProperty); }
+            set { SetValue(RewindToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Message to be displayed on the play buttons tool tip
+        /// </summary>
+        public string PlayToolTipMessage
+        {
+            get { return (string)GetValue(PlayToolTipMessageProperty); }
+            set { SetValue(PlayToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Message to be displayed on the forward buttons tool tip
+        /// </summary>
+        public string ForwardToolTipMessage
+        {
+            get { return (string)GetValue(ForwardToolTipMessageProperty); }
+            set { SetValue(ForwardToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Message to be displayed on the eject buttons tool tip
+        /// </summary>
+        public string EjectToolTipMessage
+        {
+            get { return (string)GetValue(EjectToolTipMessageProperty); }
+            set { SetValue(EjectToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Message to be displayed on the full screen buttons tool tip
+        /// </summary>
+        public string FullScreenToolTipMessage
+        {
+            get { return (string)GetValue(FullScreenToolTipMessageProperty); }
+            set { SetValue(FullScreenToolTipMessageProperty, value); }
         }
 
     }
