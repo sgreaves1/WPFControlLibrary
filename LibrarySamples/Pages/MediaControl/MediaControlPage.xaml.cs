@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Controls;
 using LibrarySamples.Pages.MediaControl.ViewModel;
 
 namespace LibrarySamples.Pages.MediaControl
@@ -30,6 +31,10 @@ namespace LibrarySamples.Pages.MediaControl
             ViewModel.FastForwardRequested += (sender, args) =>
             {
                 VideoPlayer.Position = VideoPlayer.Position + TimeSpan.FromSeconds(10);
+                if (VideoPlayer.Position >= VideoPlayer.NaturalDuration.TimeSpan)
+                {
+                    VideoPlayer.Position -= TimeSpan.FromMilliseconds(100);
+                }
             };
 
             ViewModel.FullScreenRequested += (sender, args) =>
