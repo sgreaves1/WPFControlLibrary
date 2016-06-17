@@ -1,7 +1,9 @@
-# README #
+# WPF Controls #
 
 This solution holds my library project for my WPF controls. It also contains a project that demos the controls.
 Version 1.0.4.1
+
+Available via Nuget: https://www.nuget.org/packages/SamsWPFLibrary/
 
 Please feel free to contribute!
 
