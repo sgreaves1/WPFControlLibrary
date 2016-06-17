@@ -87,6 +87,14 @@ namespace MyLibrary
                 typeof(MediaControl), 
                 new PropertyMetadata(true));
 
+        /// <summary>
+        /// Dependency property for the stop buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty StopToolTipMessageProperty =
+            DependencyProperty.Register("StopToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Stops the media."));
+
 
 
         public MediaControl()
@@ -171,5 +179,15 @@ namespace MyLibrary
             get { return (bool)GetValue(IsPlayTimeShownProperty); }
             set { SetValue(IsPlayTimeShownProperty, value); }
         }
+
+        /// <summary>
+        /// Message to be displayed on the stop buttons tool tip
+        /// </summary>
+        public string StopToolTipMessage
+        {
+            get { return (string)GetValue(StopToolTipMessageProperty); }
+            set { SetValue(StopToolTipMessageProperty, value); }
+        }
+
     }
 }

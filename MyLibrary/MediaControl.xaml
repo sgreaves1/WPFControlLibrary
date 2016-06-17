@@ -121,7 +121,7 @@
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=StopClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
-                    ToolTip="Stop">
+                    ToolTip="{Binding Path=StopToolTipMessage, ElementName=Root}">
                 <Image Source="Images/Stop.png"/>
                 <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
