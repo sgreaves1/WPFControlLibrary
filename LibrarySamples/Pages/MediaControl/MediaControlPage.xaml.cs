@@ -25,16 +25,23 @@ namespace LibrarySamples.Pages.MediaControl
 
             ViewModel.PlayRequested += (sender, args) =>
             {
+                VideoPlayer.SpeedRatio = 1;
                 VideoPlayer.Play();
             };
 
             ViewModel.FastForwardRequested += (sender, args) =>
             {
-                VideoPlayer.Position = VideoPlayer.Position + TimeSpan.FromSeconds(10);
-                if (VideoPlayer.Position >= VideoPlayer.NaturalDuration.TimeSpan)
-                {
-                    VideoPlayer.Position -= TimeSpan.FromMilliseconds(100);
-                }
+                //VideoPlayer.Position = VideoPlayer.Position + TimeSpan.FromSeconds(10);
+                //if (VideoPlayer.Position >= VideoPlayer.NaturalDuration.TimeSpan)
+                //{
+                //    VideoPlayer.Position -= TimeSpan.FromMilliseconds(100);
+                //}
+                VideoPlayer.SpeedRatio = VideoPlayer.SpeedRatio * 2;
+            };
+
+            ViewModel.EjectRequested += (sender, args) =>
+            {
+                VideoPlayer.SpeedRatio = 1;
             };
 
             ViewModel.FullScreenRequested += (sender, args) =>

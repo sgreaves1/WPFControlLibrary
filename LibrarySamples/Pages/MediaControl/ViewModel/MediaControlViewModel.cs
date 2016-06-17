@@ -26,6 +26,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public event EventHandler StopRequested;
         public event EventHandler PlayRequested;
         public event EventHandler FastForwardRequested;
+        public event EventHandler EjectRequested;
         public event EventHandler FullScreenRequested;
         public event EventHandler UpdateTime;
 
@@ -122,6 +123,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteEjectCommand(object parameter)
         {
+            EjectRequested?.Invoke(this, EventArgs.Empty);
+
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.DefaultExt = ".mp4";
             bool? result = dlg.ShowDialog();
