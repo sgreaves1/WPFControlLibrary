@@ -2,6 +2,7 @@ Release Notes - MyLibrary - Version 1.0.4.2
 
 ** New Feature
 	*[41] Media Control - Button tool tips now editable
+	*[46] Media Control - Fast forward button now works
 
 
 Release Notes - MyLibrary - Version 1.0.4.1
@@ -9,8 +10,7 @@ Release Notes - MyLibrary - Version 1.0.4.1
 ** New Feature
 	*[32] Media Control - Title can now be switched off
 	*[40] Media Control - Play time can now be switched off
-	*[46] Media Control - Fast forward button now works
-
+	
 
 Release Notes - MyLibrary - Version 1.0.4.0
 
