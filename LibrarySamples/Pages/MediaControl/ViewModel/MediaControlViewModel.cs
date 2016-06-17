@@ -25,6 +25,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         // Event handlers to be fired by the view model to update the media element
         public event EventHandler StopRequested;
         public event EventHandler PlayRequested;
+        public event EventHandler FastForwardRequested;
         public event EventHandler FullScreenRequested;
         public event EventHandler UpdateTime;
 
@@ -73,12 +74,14 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         {
             StopCommand = new DelegateCommand(ExecuteStopCommand, CanExecuteStopCommand);
             PlayCommand = new DelegateCommand(ExecutePlayCommand, CanExecutePlayCommand);
+            FastForwardCommand = new DelegateCommand(ExecuteFastForwardCommand, CanExecuteFastforwardCommand);
             EjectCommand = new DelegateCommand(ExecuteEjectCommand, CanExecuteEjectCommand);
             FullScreenCommand = new DelegateCommand(ExecuteFullScreenCommand, CanExecuteFullScreenCommand);
         }
 
         public ICommand StopCommand { get; private set; }
         public ICommand PlayCommand { get; private set; }
+        public ICommand FastForwardCommand { get; private set; }
         public ICommand EjectCommand { get; private set; }
         public ICommand FullScreenCommand { get; private set; }
 
@@ -100,6 +103,16 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public void ExecutePlayCommand(object parameter)
         {
             PlayRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        public bool CanExecuteFastforwardCommand(object parameter)
+        {
+            return true;
+        }
+
+        public void ExecuteFastForwardCommand(object parameter)
+        {
+            FastForwardRequested?.Invoke(this, EventArgs.Empty);
         }
 
         public bool CanExecuteEjectCommand(object parameter)

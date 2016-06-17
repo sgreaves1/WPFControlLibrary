@@ -33,12 +33,21 @@ namespace MyLibrary
                 typeof(ICommand),
                 typeof(MediaControl),
                 new PropertyMetadata(null));
-
+        
         // Using a DependencyProperty as the backing store for PlayClickCommand.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PlayClickCommandProperty =
             DependencyProperty.Register("PlayClickCommand", 
                 typeof(ICommand), 
                 typeof(MediaControl), 
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Dependency property for the fast forward buttons click command
+        /// </summary>
+        public static readonly DependencyProperty FastForwardClickCommandProperty =
+            DependencyProperty.Register("FastForwardClickCommand",
+                typeof(ICommand),
+                typeof(MediaControl),
                 new PropertyMetadata(null));
 
         // Using a DependencyProperty as the backing store for EjectClickCommand.  This enables animation, styling, binding, etc...
@@ -165,11 +174,20 @@ namespace MyLibrary
             get { return (ICommand)GetValue(StopClickCommandProperty); }
             set { SetValue(StopClickCommandProperty, value); }
         }
-
+        
         public ICommand PlayClickCommand
         {
             get { return (ICommand)GetValue(PlayClickCommandProperty); }
             set { SetValue(PlayClickCommandProperty, value); }
+        }
+        
+        /// <summary>
+        /// Command binding for the fast forward button
+        /// </summary>
+        public ICommand FastForwardClickCommand
+        {
+            get { return (ICommand)GetValue(FastForwardClickCommandProperty); }
+            set { SetValue(FastForwardClickCommandProperty, value); }
         }
 
         public ICommand EjectClickCommand

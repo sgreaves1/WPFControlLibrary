@@ -1,4 +1,5 @@
-﻿using LibrarySamples.Pages.MediaControl.ViewModel;
+﻿using System;
+using LibrarySamples.Pages.MediaControl.ViewModel;
 
 namespace LibrarySamples.Pages.MediaControl
 {
@@ -24,6 +25,11 @@ namespace LibrarySamples.Pages.MediaControl
             ViewModel.PlayRequested += (sender, args) =>
             {
                 VideoPlayer.Play();
+            };
+
+            ViewModel.FastForwardRequested += (sender, args) =>
+            {
+                VideoPlayer.Position = VideoPlayer.Position + TimeSpan.FromSeconds(10);
             };
 
             ViewModel.FullScreenRequested += (sender, args) =>
