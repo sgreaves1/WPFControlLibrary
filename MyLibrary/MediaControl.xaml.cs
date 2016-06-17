@@ -33,7 +33,16 @@ namespace MyLibrary
                 typeof(ICommand),
                 typeof(MediaControl),
                 new PropertyMetadata(null));
-        
+
+        /// <summary>
+        /// Dependency property for the rewind buttons click command
+        /// </summary>
+        public static readonly DependencyProperty RewindClickCommandProperty =
+            DependencyProperty.Register("RewindClickCommand",
+                typeof(ICommand),
+                typeof(MediaControl),
+                new PropertyMetadata(null));
+
         // Using a DependencyProperty as the backing store for PlayClickCommand.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty PlayClickCommandProperty =
             DependencyProperty.Register("PlayClickCommand", 
@@ -174,7 +183,19 @@ namespace MyLibrary
             get { return (ICommand)GetValue(StopClickCommandProperty); }
             set { SetValue(StopClickCommandProperty, value); }
         }
-        
+
+        /// <summary>
+        /// Command binding for the rewind button
+        /// </summary>
+        public ICommand RewindClickCommand
+        {
+            get { return (ICommand)GetValue(RewindClickCommandProperty); }
+            set { SetValue(RewindClickCommandProperty, value); }
+        }
+
+        /// <summary>
+        /// Command binding for the play button
+        /// </summary>
         public ICommand PlayClickCommand
         {
             get { return (ICommand)GetValue(PlayClickCommandProperty); }

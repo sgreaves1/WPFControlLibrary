@@ -23,6 +23,7 @@
                                 Title="{Binding Path=FileName}"
                                 PlayTime="{Binding Path=PlayTime}"
                                 StopClickCommand="{Binding Path=StopCommand}"
+                                RewindClickCommand="{Binding Path=RewindCommand}"
                                 PlayClickCommand="{Binding Path=PlayCommand}"
                                 FastForwardClickCommand="{Binding Path=FastForwardCommand}"
                                 EjectClickCommand="{Binding Path=EjectCommand}"

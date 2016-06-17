@@ -24,6 +24,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         // Event handlers to be fired by the view model to update the media element
         public event EventHandler StopRequested;
+        public event EventHandler RewindRequested;
         public event EventHandler PlayRequested;
         public event EventHandler FastForwardRequested;
         public event EventHandler EjectRequested;
@@ -74,6 +75,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public void InitCommands()
         {
             StopCommand = new DelegateCommand(ExecuteStopCommand, CanExecuteStopCommand);
+            RewindCommand = new DelegateCommand(ExecuteRewindCommand, CanExecuteRewindCommand);
             PlayCommand = new DelegateCommand(ExecutePlayCommand, CanExecutePlayCommand);
             FastForwardCommand = new DelegateCommand(ExecuteFastForwardCommand, CanExecuteFastforwardCommand);
             EjectCommand = new DelegateCommand(ExecuteEjectCommand, CanExecuteEjectCommand);
@@ -81,6 +83,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         }
 
         public ICommand StopCommand { get; private set; }
+        public ICommand RewindCommand { get; private set; }
         public ICommand PlayCommand { get; private set; }
         public ICommand FastForwardCommand { get; private set; }
         public ICommand EjectCommand { get; private set; }
@@ -94,6 +97,16 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public void ExecuteStopCommand(object parameter)
         {
             StopRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        public bool CanExecuteRewindCommand(object parameter)
+        {
+            return true;
+        }
+
+        public void ExecuteRewindCommand(object parameter)
+        {
+            RewindRequested?.Invoke(this, EventArgs.Empty);
         }
 
         public bool CanExecutePlayCommand(object parameter)

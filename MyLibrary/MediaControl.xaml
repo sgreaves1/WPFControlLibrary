@@ -163,14 +163,15 @@
             </Button>
 
                 <Button Name="RewindButton"
-                    Content="Rewind" 
                     Grid.Column="1"
                     Grid.Row="0"
-                    Width="43"
-                    Height="20" 
+                    Width="30"
+                    Height="30" 
                     Background="Transparent"
                     BorderThickness="0"
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                    Command="{Binding Path=RewindClickCommand, ElementName=Root}" 
+                    CommandParameter="{Binding}"
                     ToolTip="{Binding Path=RewindToolTipMessage, ElementName=Root}">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -209,6 +210,7 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
+                    <Image Source="Images/rewind.png"/>
                 </Button>
 
                 <Button Name="PlayButton"

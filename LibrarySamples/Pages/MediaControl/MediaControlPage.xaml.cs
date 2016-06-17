@@ -23,6 +23,18 @@ namespace LibrarySamples.Pages.MediaControl
                 VideoPlayer.Close();
             };
 
+            ViewModel.RewindRequested += (sender, args) =>
+            {
+                if (VideoPlayer.SpeedRatio >= 0)
+                {
+                    VideoPlayer.SpeedRatio = -1;
+                }
+                else
+                {
+                    VideoPlayer.SpeedRatio = VideoPlayer.SpeedRatio * 2;
+                }
+            };
+
             ViewModel.PlayRequested += (sender, args) =>
             {
                 VideoPlayer.SpeedRatio = 1;
@@ -36,7 +48,14 @@ namespace LibrarySamples.Pages.MediaControl
                 //{
                 //    VideoPlayer.Position -= TimeSpan.FromMilliseconds(100);
                 //}
-                VideoPlayer.SpeedRatio = VideoPlayer.SpeedRatio * 2;
+                if (VideoPlayer.SpeedRatio <= 0)
+                {
+                    VideoPlayer.SpeedRatio = 1;
+                }
+                else
+                {
+                    VideoPlayer.SpeedRatio = VideoPlayer.SpeedRatio*2;
+                }
             };
 
             ViewModel.EjectRequested += (sender, args) =>
