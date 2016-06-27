@@ -26,7 +26,7 @@ namespace LibrarySamples.Pages.MediaControl
 
             ViewModel.StopRequested += (sender, args) =>
             {
-                _source?.Cancel();
+                CancelRewind();
 
                 VideoPlayer.Close();
             };
@@ -34,6 +34,12 @@ namespace LibrarySamples.Pages.MediaControl
             ViewModel.RewindRequested += (sender, args) =>
             {
                 _source?.Cancel();
+
+                if (RewindSpeed.Seconds <= 12)
+                    RewindSpeed = RewindSpeed.Add(RewindSpeed);
+
+                if (RewindSpeed.Seconds == 0)
+                    RewindSpeed = new TimeSpan(0,0,0,1);
 
                 VideoPlayer.Pause();
 
@@ -44,7 +50,7 @@ namespace LibrarySamples.Pages.MediaControl
 
             ViewModel.PlayRequested += (sender, args) =>
             {
-                _source?.Cancel();
+                CancelRewind();
 
                 VideoPlayer.SpeedRatio = 1;
                 VideoPlayer.Play();
@@ -52,7 +58,7 @@ namespace LibrarySamples.Pages.MediaControl
 
             ViewModel.FastForwardRequested += (sender, args) =>
             {
-                _source?.Cancel();
+                CancelRewind();
 
                 if (VideoPlayer.SpeedRatio <= 0)
                 {
@@ -66,7 +72,7 @@ namespace LibrarySamples.Pages.MediaControl
 
             ViewModel.EjectRequested += (sender, args) =>
             {
-                _source?.Cancel();
+                CancelRewind();
 
                 VideoPlayer.SpeedRatio = 1;
             };
@@ -85,6 +91,14 @@ namespace LibrarySamples.Pages.MediaControl
         {
             get { return _viewModel; }
             set { _viewModel = value; }
+        }
+
+
+        private void CancelRewind()
+        {
+            _source?.Cancel();
+
+            RewindSpeed = new TimeSpan(0,0,0,0);
         }
 
         /// <summary>
