@@ -13,6 +13,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         private TimeSpan _playTime;
         private bool _isFullScreenEnabled;
         private bool _isEjectEnabled;
+        private TimeSpan _rewindSpeed;
 
         public MediaControlViewModel()
         {
@@ -20,6 +21,21 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             FileName = "No Video";
             IsFullScreenEnabled = true;
             IsEjectEnabled = true;
+            RewindSpeed = new TimeSpan(0,0,0,0);
+        }
+
+        /// <summary>
+        /// function used to determine the speed the rewind speed needs to be at
+        /// </summary>
+        public void IncreaseRewindTime()
+        {
+            // don't increase above 12 seconds
+            if (RewindSpeed.Seconds <= 12)
+                RewindSpeed = RewindSpeed.Add(RewindSpeed);
+
+            // first press of rewind so set it to 1
+            if (RewindSpeed.Seconds == 0)
+                RewindSpeed = new TimeSpan(0, 0, 0, 1);
         }
 
         // Event handlers to be fired by the view model to update the media element
@@ -69,6 +85,12 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
                 _isEjectEnabled = value;
                 OnPropertyChanged();
             }
+        }
+
+        public TimeSpan RewindSpeed
+        {
+            get {  return _rewindSpeed; }
+            set { _rewindSpeed = value; }
         }
 
         #region commands

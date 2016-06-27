@@ -15,8 +15,6 @@ namespace LibrarySamples.Pages.MediaControl
 
         private CancellationTokenSource _source;
 
-        private TimeSpan RewindSpeed = new TimeSpan(0, 0, 0, 1);
-
         public MediaControlPage()
         {
             InitializeComponent();
@@ -35,11 +33,7 @@ namespace LibrarySamples.Pages.MediaControl
             {
                 _source?.Cancel();
 
-                if (RewindSpeed.Seconds <= 12)
-                    RewindSpeed = RewindSpeed.Add(RewindSpeed);
-
-                if (RewindSpeed.Seconds == 0)
-                    RewindSpeed = new TimeSpan(0,0,0,1);
+                ViewModel.IncreaseRewindTime();
 
                 VideoPlayer.Pause();
 
@@ -98,7 +92,7 @@ namespace LibrarySamples.Pages.MediaControl
         {
             _source?.Cancel();
 
-            RewindSpeed = new TimeSpan(0,0,0,0);
+            ViewModel.RewindSpeed = new TimeSpan(0,0,0,0);
         }
 
         /// <summary>
@@ -120,7 +114,7 @@ namespace LibrarySamples.Pages.MediaControl
                 {
                     break;
                 }
-                VideoPlayer.Position = VideoPlayer.Position.Subtract(RewindSpeed);
+                VideoPlayer.Position = VideoPlayer.Position.Subtract(ViewModel.RewindSpeed);
             }
         }
     }
