@@ -14,11 +14,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <MediaElement Name="VideoPlayer" Grid.Row="0" Grid.RowSpan="2" 
+        <MediaElement Name="VideoPlayer" 
+                      Grid.Row="0" 
+                      Grid.RowSpan="2" 
                       LoadedBehavior="Manual"
-                      Source="{Binding Path=FileName}"/>
+                      Source="{Binding Path=FileName}"
+                      ScrubbingEnabled="True"/>
 
-        <myLibrary:MediaControl Grid.Row="1" 
+        <myLibrary:MediaControl Grid.Row="1"
                                 VerticalAlignment="Bottom"
                                 Title="{Binding Path=FileName}"
                                 PlayTime="{Binding Path=PlayTime}"
