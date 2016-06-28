@@ -86,7 +86,16 @@ namespace MyLibrary
                 typeof(bool), 
                 typeof(MediaControl), 
                 new PropertyMetadata(true));
-        
+
+        /// <summary>
+        /// Dependency property for showing play or pause button
+        /// </summary>
+        public static readonly DependencyProperty CanPlayProperty =
+            DependencyProperty.Register("CanPlay",
+                typeof(bool),
+                typeof(MediaControl),
+                new PropertyMetadata(false));
+
         /// <summary>
         /// Dependency property for showing the title
         /// </summary>
@@ -239,6 +248,15 @@ namespace MyLibrary
         {
             get { return (bool)GetValue(IsFullScreenEnabledProperty); }
             set { SetValue(IsFullScreenEnabledProperty, value); }
+        }
+
+        /// <summary>
+        /// Sets weather the play or pause button is shown
+        /// </summary>
+        public bool CanPlay
+        {
+            get { return (bool) GetValue(CanPlayProperty); }
+            set {  SetValue(CanPlayProperty, value); }
         }
 
         /// <summary>

@@ -28,6 +28,7 @@
                                 StopClickCommand="{Binding Path=StopCommand}"
                                 RewindClickCommand="{Binding Path=RewindCommand}"
                                 PlayClickCommand="{Binding Path=PlayCommand}"
+                                CanPlay="{Binding Path=CanPlay}"
                                 FastForwardClickCommand="{Binding Path=FastForwardCommand}"
                                 EjectClickCommand="{Binding Path=EjectCommand}"
                                 FullScreenClickCommand="{Binding Path=FullScreenCommand}"

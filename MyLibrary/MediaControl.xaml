@@ -223,7 +223,8 @@
                     Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
                     Command="{Binding Path=PlayClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
-                    ToolTip="{Binding Path=PlayToolTipMessage, ElementName=Root}">
+                    ToolTip="{Binding Path=PlayToolTipMessage, ElementName=Root}"
+                    Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>

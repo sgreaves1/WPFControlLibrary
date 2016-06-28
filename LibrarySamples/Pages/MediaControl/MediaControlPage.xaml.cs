@@ -34,6 +34,16 @@ namespace LibrarySamples.Pages.MediaControl
             {
                 VideoPlayer.SpeedRatio = 1;
                 VideoPlayer.Play();
+
+                if (!VideoPlayer.HasVideo && !VideoPlayer.HasAudio)
+                {
+                    VideoPlayer.SpeedRatio = 0;
+                }
+                else
+                {
+                    ViewModel.CanPlay = false;
+                }
+                
             };
 
             ViewModel.FastForwardRequested += (sender, args) =>
@@ -50,7 +60,7 @@ namespace LibrarySamples.Pages.MediaControl
 
             ViewModel.EjectRequested += (sender, args) =>
             {
-                VideoPlayer.SpeedRatio = 1;
+                VideoPlayer.SpeedRatio = 0;
             };
 
             ViewModel.FullScreenRequested += (sender, args) =>

@@ -14,6 +14,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         private TimeSpan _playTime;
         private bool _isFullScreenEnabled;
         private bool _isEjectEnabled;
+        private bool _canPlay;
         private TimeSpan _rewindSpeed;
         private CancellationTokenSource _source;
 
@@ -23,6 +24,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             FileName = "No Video";
             IsFullScreenEnabled = true;
             IsEjectEnabled = true;
+            CanPlay = true;
             RewindSpeed = new TimeSpan(0,0,0,0);
         }
 
@@ -96,6 +98,16 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             }
         }
 
+        public bool CanPlay
+        {
+            get { return _canPlay; }
+            set
+            {
+                _canPlay = value;
+                OnPropertyChanged();
+            }
+        }
+
         public TimeSpan RewindSpeed
         {
             get {  return _rewindSpeed; }
@@ -134,6 +146,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public void ExecuteStopCommand(object parameter)
         {
             CancelRewind();
+            CanPlay = true;
 
             StopRequested?.Invoke(this, EventArgs.Empty);
         }
@@ -145,6 +158,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteRewindCommand(object parameter)
         {
+            CanPlay = true;
+
             _source?.Cancel();
 
             IncreaseRewindTime();
@@ -173,6 +188,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteFastForwardCommand(object parameter)
         {
+            CanPlay = true;
+
             CancelRewind();
 
             FastForwardRequested?.Invoke(this, EventArgs.Empty);
@@ -185,6 +202,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteEjectCommand(object parameter)
         {
+            CanPlay = true;
+
             CancelRewind();
 
             EjectRequested?.Invoke(this, EventArgs.Empty);
