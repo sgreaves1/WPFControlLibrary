@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using LibrarySamples.Command;
@@ -14,6 +15,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         private bool _isFullScreenEnabled;
         private bool _isEjectEnabled;
         private TimeSpan _rewindSpeed;
+        private CancellationTokenSource _source;
 
         public MediaControlViewModel()
         {
@@ -36,6 +38,13 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             // first press of rewind so set it to 1
             if (RewindSpeed.Seconds == 0)
                 RewindSpeed = new TimeSpan(0, 0, 0, 1);
+        }
+
+        public void CancelRewind()
+        {
+            _source?.Cancel();
+
+            RewindSpeed = new TimeSpan(0, 0, 0, 0);
         }
 
         // Event handlers to be fired by the view model to update the media element
@@ -93,6 +102,12 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             set { _rewindSpeed = value; }
         }
 
+        public CancellationTokenSource Source
+        {
+            get { return _source; }
+            set { _source = value; }
+        }
+
         #region commands
         public void InitCommands()
         {
@@ -118,6 +133,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteStopCommand(object parameter)
         {
+            CancelRewind();
+
             StopRequested?.Invoke(this, EventArgs.Empty);
         }
 
@@ -128,6 +145,12 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteRewindCommand(object parameter)
         {
+            _source?.Cancel();
+
+            IncreaseRewindTime();
+
+            _source = new CancellationTokenSource();
+
             RewindRequested?.Invoke(this, EventArgs.Empty);
         }
 
@@ -138,6 +161,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecutePlayCommand(object parameter)
         {
+            CancelRewind();
+
             PlayRequested?.Invoke(this, EventArgs.Empty);
         }
 
@@ -148,6 +173,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteFastForwardCommand(object parameter)
         {
+            CancelRewind();
+
             FastForwardRequested?.Invoke(this, EventArgs.Empty);
         }
 
@@ -158,6 +185,8 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
 
         public void ExecuteEjectCommand(object parameter)
         {
+            CancelRewind();
+
             EjectRequested?.Invoke(this, EventArgs.Empty);
 
             OpenFileDialog dlg = new OpenFileDialog();
