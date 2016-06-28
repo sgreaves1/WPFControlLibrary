@@ -4,6 +4,7 @@ Release Notes - MyLibrary - Version 1.0.4.2
 	*[41] Media Control - Button tool tips now editable
 	*[46] Media Control - Fast forward button now works
 	*[47] Media Control - Rewind Button now works
+	*[51] Media Control - Pause and play buttons work together
 
 
 Release Notes - MyLibrary - Version 1.0.4.1
