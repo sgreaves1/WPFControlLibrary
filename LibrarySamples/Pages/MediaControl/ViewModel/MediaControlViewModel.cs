@@ -53,6 +53,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public event EventHandler StopRequested;
         public event EventHandler RewindRequested;
         public event EventHandler PlayRequested;
+        public event EventHandler PauseRequested;
         public event EventHandler FastForwardRequested;
         public event EventHandler EjectRequested;
         public event EventHandler FullScreenRequested;
@@ -126,6 +127,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             StopCommand = new DelegateCommand(ExecuteStopCommand, CanExecuteStopCommand);
             RewindCommand = new DelegateCommand(ExecuteRewindCommand, CanExecuteRewindCommand);
             PlayCommand = new DelegateCommand(ExecutePlayCommand, CanExecutePlayCommand);
+            PauseCommand = new DelegateCommand(ExecutePauseCommand, CanExecutePauseCommand);
             FastForwardCommand = new DelegateCommand(ExecuteFastForwardCommand, CanExecuteFastforwardCommand);
             EjectCommand = new DelegateCommand(ExecuteEjectCommand, CanExecuteEjectCommand);
             FullScreenCommand = new DelegateCommand(ExecuteFullScreenCommand, CanExecuteFullScreenCommand);
@@ -134,6 +136,7 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
         public ICommand StopCommand { get; private set; }
         public ICommand RewindCommand { get; private set; }
         public ICommand PlayCommand { get; private set; }
+        public ICommand PauseCommand { get; private set; }
         public ICommand FastForwardCommand { get; private set; }
         public ICommand EjectCommand { get; private set; }
         public ICommand FullScreenCommand { get; private set; }
@@ -179,6 +182,20 @@ namespace LibrarySamples.Pages.MediaControl.ViewModel
             CancelRewind();
 
             PlayRequested?.Invoke(this, EventArgs.Empty);
+        }
+
+        public bool CanExecutePauseCommand(object parameter)
+        {
+            return true;
+        }
+
+        public void ExecutePauseCommand(object parameter)
+        {
+            CancelRewind();
+
+            CanPlay = true;
+
+            PauseRequested?.Invoke(this, EventArgs.Empty);
         }
 
         public bool CanExecuteFastforwardCommand(object parameter)

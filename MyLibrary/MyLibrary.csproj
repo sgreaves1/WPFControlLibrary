@@ -55,6 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converter\InvertableBooleanToVisibilityConverter.cs" />
     <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
     <Compile Include="DesignClasses\DesignPropertiesControlUc.cs" />
     <Compile Include="Extended\ColumnDefinitionExtended.cs" />
@@ -131,6 +132,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pause.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

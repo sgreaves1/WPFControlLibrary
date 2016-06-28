@@ -51,6 +51,15 @@ namespace MyLibrary
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// Dependency property for pause button command
+        /// </summary>
+        public static readonly DependencyProperty PauseClickCommandProperty =
+            DependencyProperty.Register("PauseClickCommand",
+                typeof(ICommand),
+                typeof(MediaControl),
+                new PropertyMetadata(null));
+
+        /// <summary>
         /// Dependency property for the fast forward buttons click command
         /// </summary>
         public static readonly DependencyProperty FastForwardClickCommandProperty =
@@ -139,6 +148,14 @@ namespace MyLibrary
                 new PropertyMetadata("Plays the media."));
 
         /// <summary>
+        /// Dependency property for the pause buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty PauseToolTipMessageProperty =
+            DependencyProperty.Register("PauseToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Pauses the media."));
+
+        /// <summary>
         /// Dependency property for the forward buttons tool tip message
         /// </summary>
         public static readonly DependencyProperty ForwardToolTipMessageProperty =
@@ -210,7 +227,16 @@ namespace MyLibrary
             get { return (ICommand)GetValue(PlayClickCommandProperty); }
             set { SetValue(PlayClickCommandProperty, value); }
         }
-        
+
+        /// <summary>
+        /// Command binding for the pause button
+        /// </summary>
+        public ICommand PauseClickCommand
+        {
+            get { return (ICommand)GetValue(PauseClickCommandProperty); }
+            set { SetValue(PauseClickCommandProperty, value); }
+        }
+
         /// <summary>
         /// Command binding for the fast forward button
         /// </summary>
@@ -302,6 +328,15 @@ namespace MyLibrary
         {
             get { return (string)GetValue(PlayToolTipMessageProperty); }
             set { SetValue(PlayToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Message to be displayed on the pause buttons tool tip
+        /// </summary>
+        public string PauseToolTipMessage
+        {
+            get { return (string)GetValue(PauseToolTipMessageProperty); }
+            set { SetValue(PauseToolTipMessageProperty, value); }
         }
 
         /// <summary>

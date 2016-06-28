@@ -46,6 +46,11 @@ namespace LibrarySamples.Pages.MediaControl
                 
             };
 
+            ViewModel.PauseRequested += (sender, args) =>
+            {
+                VideoPlayer.SpeedRatio = 0;
+            };
+
             ViewModel.FastForwardRequested += (sender, args) =>
             {
                 if (VideoPlayer.SpeedRatio <= 0)
