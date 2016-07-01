@@ -4,6 +4,7 @@ using System.Windows.Input;
 using LibrarySamples.Command;
 using LibrarySamples.Pages.Home;
 using LibrarySamples.Pages.MediaControl;
+using LibrarySamples.Pages.NumericUpDown;
 using LibrarySamples.Pages.ProgressList;
 
 namespace LibrarySamples.ViewModel
@@ -53,6 +54,11 @@ namespace LibrarySamples.ViewModel
                         GoToPage();
                         break;
 
+                    case "Numeric Up Down":
+                        _currentPage = new NumericUpDownPage();
+                        GoToPage();
+                        break;
+
                     default:
                         GoHome();
                         break;
@@ -64,6 +70,7 @@ namespace LibrarySamples.ViewModel
         {
             PageList.Add(new Model.Model("Progress Bar List"));
             PageList.Add(new Model.Model("Media Control"));
+            PageList.Add(new Model.Model("Numeric Up Down"));
         }
 
         public Model.Model SelectedPage

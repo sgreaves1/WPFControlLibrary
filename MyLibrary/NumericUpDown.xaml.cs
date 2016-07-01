@@ -7,8 +7,6 @@ namespace MyLibrary
     /// </summary>
     public partial class NumericUpDown
     {
-
-
         public int Value
         {
             get { return (int)GetValue(ValueProperty); }

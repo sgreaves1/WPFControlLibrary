@@ -65,6 +65,9 @@
       <DependentUpon>MediaControlPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MediaControl\ViewModel\MediaControlViewModel.cs" />
+    <Compile Include="Pages\NumericUpDown\NumericUpDownPage.xaml.cs">
+      <DependentUpon>NumericUpDownPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ProgressList\Model\ProgressBarListModel.cs" />
     <Compile Include="Pages\ProgressList\ProgressListPage.xaml.cs">
       <DependentUpon>ProgressListPage.xaml</DependentUpon>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MediaControl\MediaControlPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NumericUpDown\NumericUpDownPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
