@@ -65,9 +65,11 @@
       <DependentUpon>MediaControlPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MediaControl\ViewModel\MediaControlViewModel.cs" />
+    <Compile Include="Pages\ProgressList\Model\ProgressBarListModel.cs" />
     <Compile Include="Pages\ProgressList\ProgressListPage.xaml.cs">
       <DependentUpon>ProgressListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ProgressList\ViewModel\ProgressListPageViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DesignerMainWindowViewModel.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
