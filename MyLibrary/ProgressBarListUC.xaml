@@ -38,8 +38,7 @@
                 <DataTemplate>
                     <StackPanel Margin="10,10,10,10" MinWidth="50">
                         <WrapPanel>
-                            <Button Content="x" Width="20" Height="20" HorizontalAlignment="Left" Background="Red" Command="{Binding Path=ClickCommand, ElementName=Root}" CommandParameter="{Binding}" Visibility="{Binding Path=CanUserDeleteItems, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
-                            <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
+                               <Label Content="{Binding Path=Name}" HorizontalContentAlignment="Center"/>
                         </WrapPanel>
                         
                         <Image Source="{Binding Path=ImageName}" Width="64" Height="64"/>
@@ -56,7 +55,17 @@
                             </Label.Content>
                         </Label>
                         <ProgressBar Height="10" Minimum="{Binding Path=MinValue}" Maximum="{Binding Path=MaxValue}" Value="{Binding Path=Value}"/>
-                    </StackPanel>
+                            <Button 
+                                Width="30" 
+                                Height="30" 
+                                HorizontalAlignment="Center" 
+                                Command="{Binding Path=ClickCommand, ElementName=Root}" CommandParameter="{Binding}" 
+                                Visibility="{Binding Path=CanUserDeleteItems, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
+                                <Canvas Width="30" Height="30" Background="Transparent">
+                                    <Path Stroke="Black" Fill="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M6,19C6,20.1,6.9,21,8,21L16,21C17.1,21,18,20.1,18,19L18,7 6,7 6,19z M8.46,11.88L9.87,10.47 12,12.59 14.12,10.47 15.53,11.88 13.41,14 15.53,16.12 14.12,17.53 12,15.41 9.88,17.53 8.47,16.12 10.59,14 8.46,11.88z M15.5,4L14.5,3 9.5,3 8.5,4 5,4 5,6 19,6 19,4z"></Path>
+                                </Canvas>
+                            </Button>
+                        </StackPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
