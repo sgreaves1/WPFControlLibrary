@@ -62,11 +62,18 @@
     <Compile Include="MediaControl.xaml.cs">
       <DependentUpon>MediaControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="NumericUpDown.xaml.cs">
+      <DependentUpon>NumericUpDown.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProgressBarList\IProgressBarListItem.cs" />
     <Compile Include="ProgressBarListUc.xaml.cs">
       <DependentUpon>ProgressBarListUc.xaml</DependentUpon>
     </Compile>
     <Page Include="MediaControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NumericUpDown.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

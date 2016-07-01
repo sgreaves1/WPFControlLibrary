@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:designClasses="clr-namespace:MyLibrary.DesignClasses"
+             xmlns:myLibrary="clr-namespace:MyLibrary"
              mc:Ignorable="d" 
              Width="500"
              Height="500"
@@ -54,7 +55,10 @@
                                 </TextBlock>
                             </Label.Content>
                         </Label>
-                        <ProgressBar Height="10" Minimum="{Binding Path=MinValue}" Maximum="{Binding Path=MaxValue}" Value="{Binding Path=Value}"/>
+
+                            <myLibrary:NumericUpDown Value="{Binding Path=Value}"/>
+
+                                <ProgressBar Height="10" Minimum="{Binding Path=MinValue}" Maximum="{Binding Path=MaxValue}" Value="{Binding Path=Value}"/>
                             <Button 
                                 Width="30" 
                                 Height="30" 

@@ -8,7 +8,7 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <TextBox Width="100" Height="20"/>
+            <TextBox Width="100" Height="20" Text="{Binding Path=Value}"/>
             
             <StackPanel Orientation="Vertical" VerticalAlignment="Center">
                 <Button Width="20" Height="10" >
