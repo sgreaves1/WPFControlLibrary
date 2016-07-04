@@ -12,6 +12,37 @@ namespace MyLibrary
     /// </summary>
     public partial class NumericUpDown : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Dependency Property for the Value of the control
+        /// </summary>
+        public static readonly DependencyProperty ValueProperty =
+            DependencyProperty.Register("Value", 
+                typeof(int), 
+                typeof(NumericUpDown), 
+                new PropertyMetadata(0));
+
+        /// <summary>
+        /// Dependency Property for the Minimum of the control
+        /// </summary>
+        public static readonly DependencyProperty MinimumProperty =
+            DependencyProperty.Register("Minimum",
+                typeof(int),
+                typeof(NumericUpDown),
+                new PropertyMetadata(0));
+
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        public NumericUpDown()
+        {
+            InitializeComponent();
+
+            InitCommands();
+        }
+
+        /// <summary>
+        /// The value to be displayed in the control
+        /// </summary>
         public int Value
         {
             get { return (int)GetValue(ValueProperty); }
@@ -22,15 +53,17 @@ namespace MyLibrary
             }
         }
 
-        // Using a DependencyProperty as the backing store for Value.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty ValueProperty =
-            DependencyProperty.Register("Value", typeof(int), typeof(NumericUpDown), new PropertyMetadata(0));
-        
-        public NumericUpDown()
+        /// <summary>
+        /// The minimum value the control can be at
+        /// </summary>
+        public int Minimum
         {
-            InitializeComponent();
-
-            InitCommands();
+            get { return (int)GetValue(MinimumProperty); }
+            set
+            {
+                SetValue(MinimumProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         public ICommand IncreaseCommand { get; set; }
@@ -54,7 +87,10 @@ namespace MyLibrary
 
         public bool CanExecuteDecreaseCommand()
         {
-            return true;
+            if (Value > Minimum)
+                return true;
+
+            return false;
         }
 
         public void ExecuteDecreaseCommand()

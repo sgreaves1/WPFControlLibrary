@@ -56,7 +56,7 @@
                             </Label.Content>
                         </Label>
 
-                            <myLibrary:NumericUpDown Value="{Binding Path=Value, Mode=TwoWay}" Visibility="{Binding Path=CanUserAlterProgress, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
+                            <myLibrary:NumericUpDown Minimum="{Binding Path=MinValue}" Value="{Binding Path=Value, Mode=TwoWay}" Visibility="{Binding Path=CanUserAlterProgress, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
 
                                 <ProgressBar Height="10" Minimum="{Binding Path=MinValue}" Maximum="{Binding Path=MaxValue}" Value="{Binding Path=Value}"/>
                             <Button 
