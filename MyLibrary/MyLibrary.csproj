@@ -70,6 +70,10 @@
     <Compile Include="ProgressBarListUc.xaml.cs">
       <DependentUpon>ProgressBarListUc.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SelectPanelUc.xaml.cs">
+      <DependentUpon>SelectPanelUc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SelectPanel\IPanelItem.cs" />
     <Page Include="MediaControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -83,6 +87,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PropertiesControlUc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectPanelUc.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
