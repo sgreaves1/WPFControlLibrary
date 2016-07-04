@@ -4,8 +4,11 @@ Release Notes - MyLibrary - Version 1.0.4.2
 	*[ 2] Integer Up Down - Started the control
 	*[ 3] Progress Bar List - Can alter progress bars on the fly
 	*[11] Progress Bar List - Stop progress bars being edited depending on a Boolean
+	*[13] Progress Bar List - Add button implemented
+	*[14] Progress Bar List - Add button can now be switched on and off
 	*[21] Integer Up Down - Can now set a lower limit
 	*[22] Integer Up Down - Can now set an upper limit
+	*[38] Select Panel - Started the select panel control
 	*[41] Media Control - Button tool tips now editable
 	*[46] Media Control - Fast forward button now works
 	*[47] Media Control - Rewind Button now works
