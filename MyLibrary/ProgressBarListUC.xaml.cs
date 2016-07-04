@@ -103,37 +103,60 @@ namespace MyLibrary
         public IEnumerable<IProgressBarListItem> ItemsSource
         {
             get { return (IEnumerable<IProgressBarListItem>)GetValue(ItemsSourceProperty); }
-            set { SetValue(ItemsSourceProperty, value); }
+            set
+            {
+                SetValue(ItemsSourceProperty, value);
+            }
         }
 
         public string Title
         {
             get { return (string)GetValue(TitleProperty); }
-            set { SetValue(TitleProperty, value); }
+            set
+            {
+                SetValue(TitleProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         private int Total
         {
             get { return (int)GetValue(TotalProperty); }
-            set { SetValue(TotalProperty, value); }
+            set
+            {
+                SetValue(TotalProperty, value); 
+                OnPropertyChanged();
+            }
         }
 
         private int Value
         {
             get { return (int)GetValue(ValueProperty); }
-            set { SetValue(ValueProperty, value); }
+            set
+            {
+                SetValue(ValueProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         private int Minimum
         {
             get { return (int)GetValue(MinimumProperty); }
-            set { SetValue(MinimumProperty, value); }
+            set
+            {
+                SetValue(MinimumProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         public bool IsTotalProgressBarVisible
         {
             get { return (bool)GetValue(TotalProgressBarVisibleProperty); }
-            set { SetValue(TotalProgressBarVisibleProperty, value); }
+            set
+            {
+                SetValue(TotalProgressBarVisibleProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         public ICommand ClickCommand

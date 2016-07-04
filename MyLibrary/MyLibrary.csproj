@@ -55,6 +55,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Converter\InvertableBooleanToVisibilityConverter.cs" />
     <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
     <Compile Include="DesignClasses\DesignPropertiesControlUc.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="PropertiesControl\IPropertiesList.cs" />
     <Compile Include="PropertiesControl\IProperty.cs" />
     <Compile Include="PropertiesControl\IPropertyBase.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
