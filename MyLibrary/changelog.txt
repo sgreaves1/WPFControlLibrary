@@ -1,6 +1,9 @@
 Release Notes - MyLibrary - Version 1.0.4.2
 
 ** New Feature
+	*[02] Integer Up Down - Started the control
+	*[03] Progress Bar List - Can alter progress bars on the fly
+	*[11] Progress Bar List - Stop progress bars being edited depending on a bool
 	*[41] Media Control - Button tool tips now editable
 	*[46] Media Control - Fast forward button now works
 	*[47] Media Control - Rewind Button now works

@@ -76,6 +76,15 @@ namespace MyLibrary
                 new PropertyMetadata(false));
         
         /// <summary>
+        /// Dependency Property for the visibility of the IntergerUpDownControls
+        /// </summary>
+        public static readonly DependencyProperty CanUserAlterProgressProperty =
+            DependencyProperty.Register("CanUserAlterProgress", 
+                typeof(bool), 
+                typeof(ProgressBarListUc), 
+                new PropertyMetadata(false));
+        
+        /// <summary>
         /// Dependency Property for the add item button command
         /// </summary>
         public static readonly DependencyProperty AddItemCommandProperty =
@@ -170,7 +179,16 @@ namespace MyLibrary
             get { return (bool)GetValue(CanUserDeleteItemsProperty); }
             set { SetValue(CanUserDeleteItemsProperty, value); }
         }
-        
+
+        /// <summary>
+        /// True if the progress bars can be edited with in the view
+        /// </summary>
+        public bool CanUserAlterProgress
+        {
+            get { return (bool)GetValue(CanUserAlterProgressProperty); }
+            set { SetValue(CanUserAlterProgressProperty, value); }
+        }
+
         /// <summary>
         /// Command that executes when the add button is clicked
         /// </summary>
