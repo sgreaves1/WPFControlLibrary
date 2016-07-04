@@ -9,6 +9,8 @@ namespace MyLibrary.DesignClasses
         public string Title => "Title";
 
         public bool IsTotalProgressBarVisible => true;
+
+        public bool CanUserAddItem => true;
     }
 
     public class DesignProgressBarListItem : IProgressBarListItem

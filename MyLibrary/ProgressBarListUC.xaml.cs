@@ -93,6 +93,15 @@ namespace MyLibrary
                 typeof(ProgressBarListUc), 
                 new PropertyMetadata(null));
 
+        /// <summary>
+        /// Dependency Property for the visibility of the Add button
+        /// </summary>
+        public static readonly DependencyProperty CanUserAddItemProperty = 
+            DependencyProperty.Register("CanUserAddItem",
+                typeof(bool),
+                typeof(ProgressBarListUc),
+                new PropertyMetadata(true));
+
 
         /// <summary>
         /// Default Constructor
@@ -198,7 +207,14 @@ namespace MyLibrary
             set { SetValue(AddItemCommandProperty, value); }
         }
 
-
+        /// <summary>
+        /// True if user can click the add button
+        /// </summary>
+        public bool CanUserAddItem
+        {
+            get { return (bool)GetValue(CanUserAddItemProperty); }
+            set { SetValue(CanUserAddItemProperty, value); }
+        }
 
 
 
