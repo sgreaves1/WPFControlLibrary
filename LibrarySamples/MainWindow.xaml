@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewModel="clr-namespace:LibrarySamples.ViewModel"
+        xmlns:myLibrary="clr-namespace:MyLibrary;assembly=MyLibrary"
         mc:Ignorable="d"
         Title="MainWindow" Height="650" Width="725"
         d:DataContext="{d:DesignInstance IsDesignTimeCreatable=True, Type={x:Type viewModel:DesignerMainWindowViewModel}}">
@@ -23,8 +24,8 @@
         <Button Grid.Column="0" Grid.Row="0" Content="Home" Width="40" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10" Command="{Binding Path=HomePageCommand}"/>
         <Label Grid.Column="2" Grid.Row="0" Content="{Binding Path=ControlTitle}" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,10,10,10"/>
 
-        <ListBox Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Width="110" ItemsSource="{Binding Path=PageList}" SelectedItem="{Binding Path=SelectedPage}" DisplayMemberPath="Name" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"/>
-
+        <myLibrary:SelectPanelUc Grid.Column="0" Grid.Row="1" Grid.RowSpan="2" Width="110" ItemsSource="{Binding Path=PageList}" SelectedItem="{Binding Path=SelectedPage, Mode=TwoWay}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,10"></myLibrary:SelectPanelUc>
+        
         <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Width="5" HorizontalAlignment="Stretch"/>
 
         <Frame Grid.Column="2" x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" HorizontalAlignment="Center" Margin="10,10,10,10"/>

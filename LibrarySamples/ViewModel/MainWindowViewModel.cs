@@ -7,13 +7,14 @@ using LibrarySamples.Pages.MediaControl;
 using LibrarySamples.Pages.NumericUpDown;
 using LibrarySamples.Pages.ProgressList;
 using LibrarySamples.Pages.SelectPanel;
+using MyLibrary.SelectPanel;
 
 namespace LibrarySamples.ViewModel
 {
     public class MainWindowViewModel :BaseViewModel
     {
         private Model.Model _selectedPage;
-        private ObservableCollection<Model.Model> _pageList = new ObservableCollection<Model.Model>();
+        private ObservableCollection<IPanelItem> _pageList = new ObservableCollection<IPanelItem>();
         private string _controlTitle;
         private Page _currentPage;
         private Frame _frame;
@@ -92,7 +93,7 @@ namespace LibrarySamples.ViewModel
             }
         }
 
-        public ObservableCollection<Model.Model> PageList
+        public ObservableCollection<IPanelItem> PageList
         {
             get { return _pageList; }
             set
