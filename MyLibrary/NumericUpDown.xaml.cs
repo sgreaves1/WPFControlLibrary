@@ -13,15 +13,6 @@ namespace MyLibrary
     public partial class NumericUpDown : INotifyPropertyChanged
     {
         /// <summary>
-        /// Dependency Property for the Value of the control
-        /// </summary>
-        public static readonly DependencyProperty ValueProperty =
-            DependencyProperty.Register("Value", 
-                typeof(int), 
-                typeof(NumericUpDown), 
-                new PropertyMetadata(0));
-
-        /// <summary>
         /// Dependency Property for the Minimum of the control
         /// </summary>
         public static readonly DependencyProperty MinimumProperty =
@@ -31,6 +22,24 @@ namespace MyLibrary
                 new PropertyMetadata(0));
 
         /// <summary>
+        /// Dependency Property for the Value of the control
+        /// </summary>
+        public static readonly DependencyProperty ValueProperty =
+            DependencyProperty.Register("Value", 
+                typeof(int), 
+                typeof(NumericUpDown), 
+                new PropertyMetadata(0));
+
+        /// <summary>
+        /// Dependency Property for the Maximum of the control
+        /// </summary>
+        public static readonly DependencyProperty MaximumProperty =
+            DependencyProperty.Register("Maximum",
+                typeof(int),
+                typeof(NumericUpDown),
+                new PropertyMetadata(100000));
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public NumericUpDown()
@@ -38,6 +47,19 @@ namespace MyLibrary
             InitializeComponent();
 
             InitCommands();
+        }
+
+        /// <summary>
+        /// The minimum value the control can be at
+        /// </summary>
+        public int Minimum
+        {
+            get { return (int)GetValue(MinimumProperty); }
+            set
+            {
+                SetValue(MinimumProperty, value);
+                OnPropertyChanged();
+            }
         }
 
         /// <summary>
@@ -54,17 +76,18 @@ namespace MyLibrary
         }
 
         /// <summary>
-        /// The minimum value the control can be at
+        /// The maximum value the control can be at
         /// </summary>
-        public int Minimum
+        public int Maximum
         {
-            get { return (int)GetValue(MinimumProperty); }
+            get { return (int)GetValue(MaximumProperty); }
             set
             {
-                SetValue(MinimumProperty, value);
+                SetValue(MaximumProperty, value);
                 OnPropertyChanged();
             }
         }
+
 
         public ICommand IncreaseCommand { get; set; }
         public ICommand DecreaseCommand { get; set; }
@@ -77,7 +100,10 @@ namespace MyLibrary
 
         public bool CanExecuteIncreaseCommand()
         {
-            return true;
+            if (Value < Maximum)
+                return true;
+
+            return false;
         }
 
         public void ExecuteIncreaseCommand()
