@@ -88,8 +88,15 @@ namespace MyLibrary
             }
         }
 
+        #region Commands
 
+        /// <summary>
+        /// Command to increase the value
+        /// </summary>
         public ICommand IncreaseCommand { get; set; }
+        /// <summary>
+        /// Command to decrease the value
+        /// </summary>
         public ICommand DecreaseCommand { get; set; }
 
         private void InitCommands()
@@ -98,6 +105,10 @@ namespace MyLibrary
             DecreaseCommand = new RelayCommand(ExecuteDecreaseCommand, CanExecuteDecreaseCommand);
         }
 
+        /// <summary>
+        /// Method to return if we can or cant press the increase button 
+        /// </summary>
+        /// <returns>True if we can increase value</returns>
         public bool CanExecuteIncreaseCommand()
         {
             if (Value < Maximum)
@@ -106,11 +117,18 @@ namespace MyLibrary
             return false;
         }
 
+        /// <summary>
+        /// Method containing increase value logic
+        /// </summary>
         public void ExecuteIncreaseCommand()
         {
             Value++;
         }
 
+        /// <summary>
+        /// Method to return if we can or cant press the decrease button 
+        /// </summary>
+        /// <returns>True if we can decrease value</returns>
         public bool CanExecuteDecreaseCommand()
         {
             if (Value > Minimum)
@@ -119,10 +137,15 @@ namespace MyLibrary
             return false;
         }
 
+        /// <summary>
+        /// Method containing decrease value logic
+        /// </summary>
         public void ExecuteDecreaseCommand()
         {
             Value--;
         }
+
+        #endregion
 
         public event PropertyChangedEventHandler PropertyChanged;
 
