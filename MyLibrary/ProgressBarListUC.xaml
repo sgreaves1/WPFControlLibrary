@@ -31,7 +31,7 @@
             
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <WrapPanel/>
+                    <WrapPanel Orientation="{Binding ElementName=Root, Path=Orientation}"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
 

@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using MyLibrary.ProgressBarList;
 
@@ -12,6 +13,16 @@ namespace MyLibrary
     /// </summary>
     public partial class ProgressBarListUc : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Dependency property for the <see cref="Orientation"/> property.
+        /// </summary>
+        public static readonly DependencyProperty OrientationProperty =
+            DependencyProperty.Register("Orientation", 
+                typeof(Orientation), 
+                typeof(ProgressBarListUc), 
+                new PropertyMetadata(Orientation.Horizontal));
+
+
         // Using a DependencyProperty as the backing store for ListItems.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ItemsSourceProperty 
             = DependencyProperty.Register("ItemsSource", 
@@ -116,6 +127,15 @@ namespace MyLibrary
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        /// <summary>
+        /// Sets the orientation of the progress bar list
+        /// </summary>
+        public Orientation Orientation
+        {
+            get { return (Orientation)GetValue(OrientationProperty); }
+            set { SetValue(OrientationProperty, value); }
         }
 
         public IEnumerable<IProgressBarListItem> ItemsSource
