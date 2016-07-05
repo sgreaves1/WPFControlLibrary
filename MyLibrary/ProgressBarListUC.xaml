@@ -18,7 +18,7 @@
     <StackPanel>
         <StackPanel>
             <Label Content="{Binding Path=Title}" HorizontalAlignment="Center"/>
-            <ProgressBar Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}" Visibility="{Binding Path=IsTotalProgressBarVisible, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
+            <ProgressBar Margin="0,0,0,10" Width="250" Height="10" Maximum="{Binding Path=Total, ElementName=Root}" Minimum="{Binding Path=Minimum, ElementName=Root}" Value="{Binding Path=Value, ElementName=Root}" Visibility="{Binding Path=IsTotalProgressBarVisible, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
         </StackPanel>
         
         <Grid>
@@ -27,7 +27,7 @@
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
                 
-            <ItemsControl Grid.Column="0" ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Aqua" BorderThickness="1">
+            <ItemsControl Grid.Column="0" ItemsSource="{Binding Path=ItemsSource, ElementName=Root}" BorderBrush="Black" BorderThickness="1">
             
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
@@ -73,8 +73,22 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
-            <Button Grid.Column="1" Width="64" Height="64" Content="Add" Command="{Binding Path=AddItemCommand, ElementName=Root}" CommandParameter="{Binding}"
-                    Visibility="{Binding Path=CanUserAddItem, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"/>
+            <Button 
+                Grid.Column="1" 
+                Width="64" 
+                Height="64"  
+                Command="{Binding Path=AddItemCommand, ElementName=Root}" 
+                CommandParameter="{Binding}"
+                Visibility="{Binding Path=CanUserAddItem, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
+                <Canvas Width="64" Height="64" Background="Transparent">
+                    <Path Stroke="Black" 
+                          Fill="Black" 
+                          Stretch="Fill" 
+                          Data="F1 M24,24z M0,0z M19,13L13,13 13,19 11,19 11,13 5,13 5,11 11,11 11,5 13,5 13,11 19,11 19,13z" 
+                          Height="64" 
+                          Width="64"/>
+                </Canvas>
+            </Button>
         </Grid>
     </StackPanel>
 </UserControl>
