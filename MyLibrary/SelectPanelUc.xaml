@@ -6,64 +6,11 @@
              mc:Ignorable="d" 
              x:Name="Root">
     <Grid>
-            <ListView ItemsSource="{Binding Path=ItemsSource, ElementName=Root}"  BorderThickness="1"
-                      BorderBrush="Black"
+        <ListView ItemsSource="{Binding Path=ItemsSource, ElementName=Root}"
+                      SelectedItem="{Binding ElementName=Root, Path=SelectedItem}"
+                      DisplayMemberPath="Name"
                       Padding="0"
                       Margin="0,0,0,0" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-
-                <ListView.Resources>
-                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
-                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
-                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
-                </ListView.Resources>
-
-                <ListView.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Width="{Binding Path=Width}"/>
-                    </ItemsPanelTemplate>
-                </ListView.ItemsPanel>
-
-                <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ToggleButton BorderThickness="1" Margin="0,0,5,5" Width="250" Height="40" HorizontalContentAlignment="Left" IsChecked="{Binding Path=IsSelected}" Click="ButtonBase_OnClick">
-
-                        <ToggleButton.Style>
-                            <Style TargetType="{x:Type ToggleButton}">
-
-                                <Setter Property="Template">
-                                    <Setter.Value>
-                                        <ControlTemplate TargetType="ToggleButton">
-                                            <Border BorderBrush="{TemplateBinding BorderBrush}" 
-                                                Background="{TemplateBinding Background}">
-                                                <ContentPresenter HorizontalAlignment="Left"                  
-                                                            VerticalAlignment="Center"/>
-                                            </Border>
-                                        </ControlTemplate>
-                                    </Setter.Value>
-                                </Setter>
-
-                                <Style.Triggers>
-                                    <Trigger Property="IsChecked" Value="True">
-                                        <Setter Property="Background" Value="GreenYellow"/>
-                                    </Trigger>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Effect">
-                                            <Setter.Value>
-                                                <DropShadowEffect ShadowDepth="0" Color="LightGray" Opacity="1" BlurRadius="20"/>
-                                            </Setter.Value>
-                                        </Setter>
-                                    </Trigger>
-                                </Style.Triggers>
-                            </Style>
-                        </ToggleButton.Style>
-
-                        <DockPanel>
-                            <TextBlock Text="{Binding Path=Name}" VerticalAlignment="Center"/>
-                        </DockPanel>
-                    </ToggleButton>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-                
-                </ListView>
+        </ListView>
     </Grid>
 </UserControl>
