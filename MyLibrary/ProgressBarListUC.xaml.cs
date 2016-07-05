@@ -113,6 +113,15 @@ namespace MyLibrary
                 typeof(ProgressBarListUc),
                 new PropertyMetadata(true));
 
+        /// <summary>
+        /// Dependency Property for the image data of the Add button
+        /// </summary>
+        public static readonly DependencyProperty AddButtonDataProperty =
+            DependencyProperty.Register("AddButtonData",
+                typeof(string),
+                typeof(ProgressBarListUc),
+                new PropertyMetadata("F1 M24,24z M0,0z M19,13L13,13 13,19 11,19 11,13 5,13 5,11 11,11 11,5 13,5 13,11 19,11 19,13z"));
+
 
         /// <summary>
         /// Default Constructor
@@ -236,7 +245,14 @@ namespace MyLibrary
             set { SetValue(CanUserAddItemProperty, value); }
         }
 
-
+        /// <summary>
+        /// The image for the add button in geometry data form
+        /// </summary>
+        public string AddButtonData
+        {
+            get { return (string) GetValue(AddButtonDataProperty); }
+            set { SetValue(AddButtonDataProperty, value); }
+        }
 
         /// <summary>
         /// Property changed function for when one of the items changes
