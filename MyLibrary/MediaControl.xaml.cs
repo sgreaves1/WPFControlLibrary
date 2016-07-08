@@ -179,7 +179,61 @@ namespace MyLibrary
                 typeof(string), typeof(MediaControl),
                 new PropertyMetadata("Puts the media into full screen mode."));
 
+        /// <summary>
+        /// Dependency property for the stop buttons image data
+        /// </summary>
+        public static readonly DependencyProperty StopDataProperty =
+            DependencyProperty.Register("StopData",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M6,6L18,6 18,18 6,18z"));
 
+        /// <summary>
+        /// Dependency property for the rewind buttons image data
+        /// </summary>
+        public static readonly DependencyProperty RewindDataProperty =
+            DependencyProperty.Register("RewindData",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M11,18L11,6 2.5,12 11,18z M11.5,12L20,18 20,6 11.5,12z"));
+
+        /// <summary>
+        /// Dependency property for the play buttons image data
+        /// </summary>
+        public static readonly DependencyProperty PlayDataProperty =
+            DependencyProperty.Register("PlayData",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M8,5L8,19 19,12z"));
+
+        /// <summary>
+        /// Dependency property for the pause buttons image data
+        /// </summary>
+        public static readonly DependencyProperty PauseDataProperty =
+            DependencyProperty.Register("PauseData",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M6,19L10,19 10,5 6,5 6,19z M14,5L14,19 18,19 18,5 14,5z"));
+
+        /// <summary>
+        /// Dependency property for the fast forward buttons image data
+        /// </summary>
+        public static readonly DependencyProperty FastForwardDataProperty =
+            DependencyProperty.Register("FastForward",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M4,18L12.5,12 4,6 4,18z M13,6L13,18 21.5,12 13,6z"));
+
+        /// <summary>
+        /// Dependency property for the eject buttons image data
+        /// </summary>
+        public static readonly DependencyProperty EjectDataProperty =
+            DependencyProperty.Register("EjectData",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M5,17L19,17 19,19 5,19z M12,5L5.33,15 18.67,15z"));
+
+        /// <summary>
+        /// Dependency property for the full screen buttons image data
+        /// </summary>
+        public static readonly DependencyProperty FullScreenDataProperty =
+            DependencyProperty.Register("FullScreen",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("F1 M24,24z M0,0z M7,14L5,14 5,19 10,19 10,17 7,17 7,14z M5,10L7,10 7,7 10,7 10,5 5,5 5,10z M17,17L14,17 14,19 19,19 19,14 17,14 17,17z M14,5L14,7 17,7 17,10 19,10 19,5 14,5z"));
 
         public MediaControl()
         {
@@ -364,6 +418,69 @@ namespace MyLibrary
         {
             get { return (string)GetValue(FullScreenToolTipMessageProperty); }
             set { SetValue(FullScreenToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the stop buttons image
+        /// </summary>
+        public string StopData
+        {
+            get { return (string)GetValue(StopDataProperty); }
+            set { SetValue(StopDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the rewind buttons image
+        /// </summary>
+        public string RewindData
+        {
+            get { return (string)GetValue(RewindDataProperty); }
+            set { SetValue(RewindDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the play buttons image
+        /// </summary>
+        public string PlayData
+        {
+            get { return (string)GetValue(PlayDataProperty); }
+            set { SetValue(PlayDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the pause buttons image
+        /// </summary>
+        public string PauseData
+        {
+            get { return (string)GetValue(PauseDataProperty); }
+            set { SetValue(PauseDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the fast forward buttons image
+        /// </summary>
+        public string FastForwardData
+        {
+            get { return (string)GetValue(FastForwardDataProperty); }
+            set { SetValue(FastForwardDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the eject buttons image
+        /// </summary>
+        public string EjectData
+        {
+            get { return (string)GetValue(EjectDataProperty); }
+            set { SetValue(EjectDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the full screen buttons image
+        /// </summary>
+        public string FullScreenData
+        {
+            get { return (string)GetValue(FullScreenDataProperty); }
+            set { SetValue(FullScreenDataProperty, value); }
         }
 
     }

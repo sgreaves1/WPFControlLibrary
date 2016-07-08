@@ -124,8 +124,13 @@
                     Command="{Binding Path=StopClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=StopToolTipMessage, ElementName=Root}">
-                    <Canvas Width="{Binding ElementName=StopButton, Path=ActualWidth}" Height="{Binding ElementName=StopButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=StopButton, Path=ActualWidth}" Height="{Binding ElementName=StopButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M6,6L18,6 18,18 6,18z" />
+                    <Canvas Width="{Binding ElementName=StopButton, Path=ActualWidth}" 
+                            Height="{Binding ElementName=StopButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=StopButton, Path=ActualWidth}"
+                              Height="{Binding ElementName=StopButton, Path=ActualHeight}" 
+                              Stroke="Black" 
+                              Stretch="Fill" 
+                              Data="{Binding Path=StopData, ElementName=Root}" />
                     </Canvas>
                 <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -178,7 +183,7 @@
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=RewindToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M11,18L11,6 2.5,12 11,18z M11.5,12L20,18 20,6 11.5,12z" />
+                        <Path Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=RewindData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -232,7 +237,7 @@
                     ToolTip="{Binding Path=PlayToolTipMessage, ElementName=Root}"
                     Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
                     <Canvas Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M8,5L8,19 19,12z" />
+                        <Path Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=PlayData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -286,7 +291,7 @@
                     ToolTip="{Binding Path=PauseToolTipMessage, ElementName=Root}"
                     Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource InvertBoolToVisConverter}, ConverterParameter=Inverted}">
                     <Canvas Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M6,19L10,19 10,5 6,5 6,19z M14,5L14,19 18,19 18,5 14,5z" />
+                        <Path Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=PauseData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -339,7 +344,7 @@
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=ForwardToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M4,18L12.5,12 4,6 4,18z M13,6L13,18 21.5,12 13,6z" />
+                        <Path Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=FastForwardData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -393,7 +398,7 @@
                     Visibility="{Binding Path=IsEjectEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
                         ToolTip="{Binding Path=EjectToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M5,17L19,17 19,19 5,19z M12,5L5.33,15 18.67,15z" />
+                        <Path Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=EjectData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -448,7 +453,7 @@
                         Visibility="{Binding Path=IsFullScreenEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
                         ToolTip="{Binding Path=FullScreenToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M7,14L5,14 5,19 10,19 10,17 7,17 7,14z M5,10L7,10 7,7 10,7 10,5 5,5 5,10z M17,17L14,17 14,19 19,19 19,14 17,14 17,17z M14,5L14,7 17,7 17,10 19,10 19,5 14,5z" />
+                        <Path Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=FullScreenData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
