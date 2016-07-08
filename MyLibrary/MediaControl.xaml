@@ -124,7 +124,9 @@
                     Command="{Binding Path=StopClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=StopToolTipMessage, ElementName=Root}">
-                <Image Source="Images/Stop.png"/>
+                    <Canvas Width="{Binding ElementName=StopButton, Path=ActualWidth}" Height="{Binding ElementName=StopButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=StopButton, Path=ActualWidth}" Height="{Binding ElementName=StopButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M6,6L18,6 18,18 6,18z" />
+                    </Canvas>
                 <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
