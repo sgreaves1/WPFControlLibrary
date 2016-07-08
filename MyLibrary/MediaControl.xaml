@@ -392,6 +392,9 @@
                     CommandParameter="{Binding}"
                     Visibility="{Binding Path=IsEjectEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
                         ToolTip="{Binding Path=EjectToolTipMessage, ElementName=Root}">
+                    <Canvas Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M5,17L19,17 19,19 5,19z M12,5L5.33,15 18.67,15z" />
+                    </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -429,8 +432,6 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
-                    
-                <Image Source="Images/eject.png"/>
                     
             </Button>
                 
@@ -446,6 +447,9 @@
                         CommandParameter="{Binding}"
                         Visibility="{Binding Path=IsFullScreenEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
                         ToolTip="{Binding Path=FullScreenToolTipMessage, ElementName=Root}">
+                    <Canvas Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M7,14L5,14 5,19 10,19 10,17 7,17 7,14z M5,10L7,10 7,7 10,7 10,5 5,5 5,10z M17,17L14,17 14,19 19,19 19,14 17,14 17,17z M14,5L14,7 17,7 17,10 19,10 19,5 14,5z" />
+                    </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -483,8 +487,6 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
-                    
-                    <Image Source="Images/fullscreen.png"></Image>
                 </Button>
 
             </Grid>
