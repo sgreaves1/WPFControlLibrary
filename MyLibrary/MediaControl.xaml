@@ -177,6 +177,9 @@
                     Command="{Binding Path=RewindClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=RewindToolTipMessage, ElementName=Root}">
+                    <Canvas Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M11,18L11,6 2.5,12 11,18z M11.5,12L20,18 20,6 11.5,12z" />
+                    </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -214,7 +217,6 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
-                    <Image Source="Images/rewind.png"/>
                 </Button>
 
                 <Button Name="PlayButton"
@@ -229,6 +231,9 @@
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=PlayToolTipMessage, ElementName=Root}"
                     Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
+                    <Canvas Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M8,5L8,19 19,12z" />
+                    </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -266,7 +271,6 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
-                    <Image Source="Images/play.png"/>
             </Button>
 
                 <Button Name="PauseButton"
@@ -281,6 +285,9 @@
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=PauseToolTipMessage, ElementName=Root}"
                     Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource InvertBoolToVisConverter}, ConverterParameter=Inverted}">
+                    <Canvas Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M6,19L10,19 10,5 6,5 6,19z M14,5L14,19 18,19 18,5 14,5z" />
+                    </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
                             <BeginStoryboard>
@@ -318,7 +325,6 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Button.Triggers>
-                    <Image Source="Images/pause.png"/>
                 </Button>
         
                 <Button Name="ForwardButton"
@@ -332,7 +338,10 @@
                     Command="{Binding Path=FastForwardClickCommand, ElementName=Root}" 
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=ForwardToolTipMessage, ElementName=Root}">
-                <Button.Triggers>
+                    <Canvas Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="F1 M24,24z M0,0z M4,18L12.5,12 4,6 4,18z M13,6L13,18 21.5,12 13,6z" />
+                    </Canvas>
+                    <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.MouseEnter">
                         <BeginStoryboard>
                             <Storyboard>
@@ -369,7 +378,6 @@
                         </BeginStoryboard>
                     </EventTrigger>
                 </Button.Triggers>
-                    <Image Source="Images/fastforward.png"/>
                 </Button>
 
                 <Button Name="EjectButton" 

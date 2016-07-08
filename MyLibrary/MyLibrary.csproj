@@ -130,28 +130,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Stop.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="changelog.txt" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\eject.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\play.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Images\fullscreen.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\fastforward.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\rewind.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\pause.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
