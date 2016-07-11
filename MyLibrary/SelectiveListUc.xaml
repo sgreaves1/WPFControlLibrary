@@ -5,14 +5,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              d:DesignHeight="300" 
-             d:DesignWidth="300">
+             d:DesignWidth="300"
+             x:Name="Root">
     <Grid>
         <StackPanel Orientation="Horizontal">
             <StackPanel Margin="10">
                 <Label Content="Availible" 
                        HorizontalAlignment="Center"/>
                 <ListBox Width="100" 
-                         MinHeight="240"/>
+                         MinHeight="240"
+                         ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"/>
             </StackPanel>
                 
             <StackPanel VerticalAlignment="Center">
@@ -83,7 +85,9 @@
                 <Label Content="Selected" 
                        HorizontalAlignment="Center"/>
                 <ListBox Width="100" 
-                         MinHeight="240"/>
+                         MinHeight="240"
+                         ItemsSource="{Binding ElementName=Root, Path=SelectedItems}"
+                         DisplayMemberPath="Name"/>
             </StackPanel>
         </StackPanel>
     </Grid>
