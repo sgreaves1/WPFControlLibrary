@@ -4,24 +4,86 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" 
+             d:DesignWidth="300">
     <Grid>
-            <StackPanel Orientation="Horizontal" >
+        <StackPanel Orientation="Horizontal">
             <StackPanel Margin="10">
-                <Label Content="Availible" HorizontalAlignment="Center"/>
-                <ListBox Width="100" MinHeight="240"/>
-                </StackPanel>
+                <Label Content="Availible" 
+                       HorizontalAlignment="Center"/>
+                <ListBox Width="100" 
+                         MinHeight="240"/>
+            </StackPanel>
                 
-                <StackPanel VerticalAlignment="Center">
-                    <Button Width="20" Height="20" Content=">>" Margin="10"/>
-                    <Button Width="20" Height="20" Content=">" Margin="10"/>
-                    <Button Width="20" Height="20" Content="-" Margin="10"/>
-                    <Button Width="20" Height="20" Content="--" Margin="10"/>
-                </StackPanel>
+            <StackPanel VerticalAlignment="Center">
+                <Button Width="30" 
+                        Height="20" 
+                        Margin="10">
+                    <Canvas Width="20" 
+                            Height="20">
+                        <Path FlowDirection="RightToLeft" 
+                              Width="20" 
+                              Height="20" 
+                              Canvas.Top="-3" 
+                              Stroke="Black" 
+                              Stretch="Fill" 
+                              Fill="Black" 
+                              Data="F1 M24,24z M0,0z M7,8L7,5 0,12 7,19 7,16 3,12 7,8z M13,9L13,5 6,12 13,19 13,14.9C18,14.9 21.5,16.5 24,20 23,15 20,10 13,9z"/>
+                    </Canvas>
+                </Button>
+                    
+                <Button Width="30" 
+                        Height="20" 
+                        Margin="10">
+                    <Canvas Width="20" 
+                            Height="20">
+                        <Path FlowDirection="RightToLeft" 
+                              Width="20"
+                              Height="20" 
+                              Canvas.Top="-3" 
+                              Stroke="Black" 
+                              Stretch="Fill" 
+                              Fill="Black"
+                              Data="F1 M24,24z M0,0z M10,9L10,5 3,12 10,19 10,14.9C15,14.9 18.5,16.5 21,20 20,15 17,10 10,9z"/>
+                    </Canvas>
+                </Button>
+                    
+                <Button Width="30" 
+                        Height="20" 
+                        Margin="10">
+                    <Canvas Width="20" 
+                            Height="20">
+                        <Path Width="20" 
+                              Height="20" 
+                              Canvas.Top="-3" 
+                              Stroke="Black" 
+                              Stretch="Fill" 
+                              Fill="Black"
+                              Data="F1 M24,24z M0,0z M10,9L10,5 3,12 10,19 10,14.9C15,14.9 18.5,16.5 21,20 20,15 17,10 10,9z"/>
+                    </Canvas>
+                </Button>
+                    
+                <Button Width="30" 
+                        Height="20" 
+                        Margin="10">
+                    <Canvas Width="20" 
+                            Height="20">
+                        <Path Width="20"
+                              Height="20" 
+                              Canvas.Top="-3"
+                              Stroke="Black" 
+                              Stretch="Fill" 
+                              Fill="Black" 
+                              Data="F1 M24,24z M0,0z M7,8L7,5 0,12 7,19 7,16 3,12 7,8z M13,9L13,5 6,12 13,19 13,14.9C18,14.9 21.5,16.5 24,20 23,15 20,10 13,9z"/>
+                    </Canvas>
+                </Button>
+            </StackPanel>
 
             <StackPanel Margin="10">
-                <Label Content="Selected" HorizontalAlignment="Center"/>
-                <ListBox Width="100" MinHeight="240"/>
+                <Label Content="Selected" 
+                       HorizontalAlignment="Center"/>
+                <ListBox Width="100" 
+                         MinHeight="240"/>
             </StackPanel>
         </StackPanel>
     </Grid>
