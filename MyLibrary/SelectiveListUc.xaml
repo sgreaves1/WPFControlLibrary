@@ -9,8 +9,8 @@
              x:Name="Root">
     <Grid>
         <StackPanel Orientation="Horizontal">
-            <StackPanel Margin="10">
-                <Label Content="Availible" 
+            <StackPanel Margin="10" VerticalAlignment="Center">
+                <Label Content="Availiable" 
                        HorizontalAlignment="Center"/>
                 <ListBox Width="100" 
                          MinHeight="240"
@@ -81,7 +81,7 @@
                 </Button>
             </StackPanel>
 
-            <StackPanel Margin="10">
+            <StackPanel Margin="10" VerticalAlignment="Center">
                 <Label Content="Selected" 
                        HorizontalAlignment="Center"/>
                 <ListBox Width="100" 

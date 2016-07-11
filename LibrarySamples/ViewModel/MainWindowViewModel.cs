@@ -6,6 +6,7 @@ using LibrarySamples.Pages.Home;
 using LibrarySamples.Pages.MediaControl;
 using LibrarySamples.Pages.NumericUpDown;
 using LibrarySamples.Pages.ProgressList;
+using LibrarySamples.Pages.SelectiveList;
 using LibrarySamples.Pages.SelectPanel;
 using MyLibrary.SelectPanel;
 
@@ -66,6 +67,11 @@ namespace LibrarySamples.ViewModel
                         GoToPage();
                         break;
 
+                    case "Selective List":
+                        _currentPage = new SelectiveListPage();
+                        GoToPage();
+                        break;
+
                     default:
                         GoHome();
                         break;
@@ -79,6 +85,7 @@ namespace LibrarySamples.ViewModel
             PageList.Add(new Model.Model("Media Control"));
             PageList.Add(new Model.Model("Numeric Up Down"));
             PageList.Add(new Model.Model("Select Panel"));
+            PageList.Add(new Model.Model("Selective List"));
         }
 
         public Model.Model SelectedPage
