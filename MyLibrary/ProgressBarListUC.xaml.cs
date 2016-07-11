@@ -116,6 +116,16 @@ namespace MyLibrary
         /// <summary>
         /// Dependency Property for the image data of the Add button
         /// </summary>
+        public static readonly DependencyProperty DeleteButtonDataProperty =
+            DependencyProperty.Register("DeleteButtonData",
+                typeof(string),
+                typeof(ProgressBarListUc),
+                new PropertyMetadata("F1 M24, 24z M0, 0z M6, 19C6, 20.1, 6.9, 21, 8, 21L16, 21C17.1, 21, 18, 20.1, 18, 19L18, 7 6, 7 6, 19z M8.46, 11.88L9.87, 10.47 12, 12.59 14.12, 10.47 15.53, 11.88 13.41, 14 15.53, 16.12 14.12, 17.53 12, 15.41 9.88, 17.53 8.47, 16.12 10.59, 14 8.46, 11.88z M15.5, 4L14.5, 3 9.5, 3 8.5, 4 5, 4 5, 6 19, 6 19, 4z"));
+
+
+        /// <summary>
+        /// Dependency Property for the image data of the Add button
+        /// </summary>
         public static readonly DependencyProperty AddButtonDataProperty =
             DependencyProperty.Register("AddButtonData",
                 typeof(string),
@@ -243,6 +253,15 @@ namespace MyLibrary
         {
             get { return (bool)GetValue(CanUserAddItemProperty); }
             set { SetValue(CanUserAddItemProperty, value); }
+        }
+
+        /// <summary>
+        /// The image for the delete button in geometry data form
+        /// </summary>
+        public string DeleteButtonData
+        {
+            get { return (string)GetValue(DeleteButtonDataProperty); }
+            set { SetValue(DeleteButtonDataProperty, value); }
         }
 
         /// <summary>
