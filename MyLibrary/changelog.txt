@@ -1,8 +1,16 @@
+Release Notes - MyLibrary - Version 1.0.5.1
+
+** New Feature
+	*[ 5] Media Control - Can set buttons data image
+	*[16] Progress Bar List - List orientation can be changed
+	*[58] Progress Bar List - Data can be changed for the delete button
+	*[59] Progress Bar List - Data can be changed for the add button
+
 Release Notes - MyLibrary - Version 1.0.5.0
 
 ** New Feature
 	*[ 2] Integer Up Down - Started the control
-	*[ 3] Progress Bar List - Can alter progress bars on the fly
+	*[ 3] Progress Bar List - Can alter progress bars on the fly	
 	*[11] Progress Bar List - Stop progress bars being edited depending on a Boolean
 	*[13] Progress Bar List - Add button implemented
 	*[14] Progress Bar List - Add button can now be switched on and off
