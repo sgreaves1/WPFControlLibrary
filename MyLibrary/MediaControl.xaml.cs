@@ -75,21 +75,45 @@ namespace MyLibrary
                 typeof(MediaControl),
                 new PropertyMetadata(null));
 
-        // Using a DependencyProperty as the backing store for IsEjectEnabled.  This enables animation, styling, binding, etc...
+        /// <summary>
+        /// Dependency property used to back the <see cref="IsEjectEnabled"/> property
+        /// </summary>
         public static readonly DependencyProperty IsEjectEnabledProperty =
             DependencyProperty.Register("IsEjectEnabled",
                 typeof(bool),
                 typeof(MediaControl),
                 new PropertyMetadata(true));
 
-        // Using a DependencyProperty as the backing store for FullScreenClickCommand.  This enables animation, styling, binding, etc...
+        /// <summary>
+        /// Dependency property used to back the <see cref="FullScreenClickCommand"/> property
+        /// </summary>
         public static readonly DependencyProperty FullScreenClickCommandProperty =
             DependencyProperty.Register("FullScreenClickCommand", 
                 typeof(ICommand), 
                 typeof(MediaControl), 
                 new PropertyMetadata(null));
 
-        // Using a DependencyProperty as the backing store for IsFullScreenEnabled.  This enables animation, styling, binding, etc...
+        /// <summary>
+        /// Dependency property used to back the <see cref="SoundClickCommand"/> property
+        /// </summary>
+        public static readonly DependencyProperty SoundClickCommandProperty =
+            DependencyProperty.Register("SoundClickCommand",
+                typeof(ICommand),
+                typeof(MediaControl),
+                new PropertyMetadata(null));
+
+        /// <summary>
+        /// Dependency property used to back the <see cref="IsSoundEnabled"/> property
+        /// </summary>
+        public static readonly DependencyProperty IsSoundEnabledProperty =
+            DependencyProperty.Register("IsSoundEnabled",
+                typeof(bool),
+                typeof(MediaControl),
+                new PropertyMetadata(true));
+
+        /// <summary>
+        /// Dependency property used to back the <see cref="IsFullScreenEnabled"/> property
+        /// </summary>
         public static readonly DependencyProperty IsFullScreenEnabledProperty =
             DependencyProperty.Register("IsFullScreenEnabled", 
                 typeof(bool), 
@@ -97,7 +121,7 @@ namespace MyLibrary
                 new PropertyMetadata(true));
 
         /// <summary>
-        /// Dependency property for showing play or pause button
+        /// Dependency property used to back the <see cref="CanPlay"/> property
         /// </summary>
         public static readonly DependencyProperty CanPlayProperty =
             DependencyProperty.Register("CanPlay",
@@ -180,6 +204,14 @@ namespace MyLibrary
                 new PropertyMetadata("Puts the media into full screen mode."));
 
         /// <summary>
+        /// Dependency property for the sound buttons tool tip message
+        /// </summary>
+        public static readonly DependencyProperty SoundToolTipMessageProperty =
+            DependencyProperty.Register("SoundToolTipMessage",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("Allows media sound level to be altered."));
+
+        /// <summary>
         /// Dependency property for the stop buttons image data
         /// </summary>
         public static readonly DependencyProperty StopDataProperty =
@@ -215,7 +247,7 @@ namespace MyLibrary
         /// Dependency property for the fast forward buttons image data
         /// </summary>
         public static readonly DependencyProperty FastForwardDataProperty =
-            DependencyProperty.Register("FastForward",
+            DependencyProperty.Register("FastForwardData",
                 typeof(string), typeof(MediaControl),
                 new PropertyMetadata("F1 M24,24z M0,0z M4,18L12.5,12 4,6 4,18z M13,6L13,18 21.5,12 13,6z"));
 
@@ -231,9 +263,14 @@ namespace MyLibrary
         /// Dependency property for the full screen buttons image data
         /// </summary>
         public static readonly DependencyProperty FullScreenDataProperty =
-            DependencyProperty.Register("FullScreen",
+            DependencyProperty.Register("FullScreenData",
                 typeof(string), typeof(MediaControl),
                 new PropertyMetadata("F1 M24,24z M0,0z M7,14L5,14 5,19 10,19 10,17 7,17 7,14z M5,10L7,10 7,7 10,7 10,5 5,5 5,10z M17,17L14,17 14,19 19,19 19,14 17,14 17,17z M14,5L14,7 17,7 17,10 19,10 19,5 14,5z"));
+
+        public static readonly DependencyProperty SoundDataProperty =
+            DependencyProperty.Register("SoundData",
+                typeof(string), typeof(MediaControl),
+                new PropertyMetadata("M12,12A3,3 0 0,0 9,15A3,3 0 0,0 12,18A3,3 0 0,0 15,15A3,3 0 0,0 12,12M12,20A5,5 0 0,1 7,15A5,5 0 0,1 12,10A5,5 0 0,1 17,15A5,5 0 0,1 12,20M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8C10.89,8 10,7.1 10,6C10,4.89 10.89,4 12,4M17,2H7C5.89,2 5,2.89 5,4V20A2,2 0 0,0 7,22H17A2,2 0 0,0 19,20V4C19,2.89 18.1,2 17,2Z"));
 
         public MediaControl()
         {
@@ -321,6 +358,12 @@ namespace MyLibrary
             set { SetValue(FullScreenClickCommandProperty, value); }
         }
 
+        public ICommand SoundClickCommand
+        {
+            get { return (ICommand)GetValue(SoundClickCommandProperty); }
+            set { SetValue(SoundClickCommandProperty, value); }
+        }
+
         /// <summary>
         /// Sets if the FullScreen button can be seen in the view
         /// </summary>
@@ -328,6 +371,15 @@ namespace MyLibrary
         {
             get { return (bool)GetValue(IsFullScreenEnabledProperty); }
             set { SetValue(IsFullScreenEnabledProperty, value); }
+        }
+
+        /// <summary>
+        /// Sets if the Sound button can be seen in the view
+        /// </summary>
+        public bool IsSoundEnabled
+        {
+            get { return (bool)GetValue(IsSoundEnabledProperty); }
+            set { SetValue(IsSoundEnabledProperty, value); }
         }
 
         /// <summary>
@@ -421,6 +473,15 @@ namespace MyLibrary
         }
 
         /// <summary>
+        /// Message to be displayed on the full screen buttons tool tip
+        /// </summary>
+        public string SoundToolTipMessage
+        {
+            get { return (string)GetValue(SoundToolTipMessageProperty); }
+            set { SetValue(SoundToolTipMessageProperty, value); }
+        }
+
+        /// <summary>
         /// Canvas geometry data for the stop buttons image
         /// </summary>
         public string StopData
@@ -472,6 +533,15 @@ namespace MyLibrary
         {
             get { return (string)GetValue(EjectDataProperty); }
             set { SetValue(EjectDataProperty, value); }
+        }
+
+        /// <summary>
+        /// Canvas geometry data for the sound buttons image
+        /// </summary>
+        public string SoundData
+        {
+            get { return (string)GetValue(SoundDataProperty); }
+            set { SetValue(SoundDataProperty, value); }
         }
 
         /// <summary>

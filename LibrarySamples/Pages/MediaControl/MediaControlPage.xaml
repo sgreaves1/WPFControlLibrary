@@ -25,7 +25,7 @@
                                 VerticalAlignment="Bottom"
                                 Title="{Binding Path=FileName}"
                                 PlayTime="{Binding Path=PlayTime}"
-                                StopClickCommand="{Binding Path=StopCommand}"
+                                StopClickCommand="{Binding Path=StopCommand}"                                                           
                                 RewindClickCommand="{Binding Path=RewindCommand}"
                                 PlayClickCommand="{Binding Path=PlayCommand}"
                                 PauseClickCommand="{Binding Path=PauseCommand}"

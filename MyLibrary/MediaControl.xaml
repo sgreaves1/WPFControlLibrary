@@ -106,6 +106,7 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                     <extended:ColumnDefinitionExtended Visible="{Binding Path=IsEjectEnabled, ElementName=Root}"/>
+                    <extended:ColumnDefinitionExtended Visible="{Binding Path=IsSoundEnabled, ElementName=Root}"/>
                     <extended:ColumnDefinitionExtended Visible="{Binding Path=IsFullScreenEnabled, ElementName=Root}"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -130,6 +131,7 @@
                               Height="{Binding ElementName=StopButton, Path=ActualHeight}" 
                               Stroke="Black" 
                               Stretch="Fill" 
+                              Fill="Black"
                               Data="{Binding Path=StopData, ElementName=Root}" />
                     </Canvas>
                 <Button.Triggers>
@@ -183,7 +185,7 @@
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=RewindToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=RewindData, ElementName=Root}" />
+                        <Path Width="{Binding ElementName=RewindButton, Path=ActualWidth}" Height="{Binding ElementName=RewindButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=RewindData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -237,7 +239,7 @@
                     ToolTip="{Binding Path=PlayToolTipMessage, ElementName=Root}"
                     Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource BoolToVisConverter}}">
                     <Canvas Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=PlayData, ElementName=Root}" />
+                        <Path Width="{Binding ElementName=PlayButton, Path=ActualWidth}" Height="{Binding ElementName=PlayButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=PlayData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -291,7 +293,7 @@
                     ToolTip="{Binding Path=PauseToolTipMessage, ElementName=Root}"
                     Visibility="{Binding Path=CanPlay, ElementName=Root, Converter={StaticResource InvertBoolToVisConverter}, ConverterParameter=Inverted}">
                     <Canvas Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=PauseData, ElementName=Root}" />
+                        <Path Width="{Binding ElementName=PauseButton, Path=ActualWidth}" Height="{Binding ElementName=PauseButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=PauseData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -344,7 +346,7 @@
                     CommandParameter="{Binding}"
                     ToolTip="{Binding Path=ForwardToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=FastForwardData, ElementName=Root}" />
+                        <Path Width="{Binding ElementName=ForwardButton, Path=ActualWidth}" Height="{Binding ElementName=ForwardButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=FastForwardData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                     <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -398,7 +400,7 @@
                     Visibility="{Binding Path=IsEjectEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
                         ToolTip="{Binding Path=EjectToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=EjectData, ElementName=Root}" />
+                        <Path Width="{Binding ElementName=EjectButton, Path=ActualWidth}" Height="{Binding ElementName=EjectButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=EjectData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
@@ -439,9 +441,63 @@
                     </Button.Triggers>
                     
             </Button>
+
+                <Button Name="SoundButton"
+                        Grid.Column="5"
+                        Grid.Row="0"
+                        Width="30"
+                        Height="30"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}"
+                        Command="{Binding Path=SoundClickCommand, ElementName=Root}" 
+                        CommandParameter="{Binding}"
+                        Visibility="{Binding Path=IsSoundEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
+                        ToolTip="{Binding Path=SoundToolTipMessage, ElementName=Root}">
+                    <Canvas Width="{Binding ElementName=SoundButton, Path=ActualWidth}" Height="{Binding ElementName=SoundButton, Path=ActualHeight}">
+                        <Path Width="{Binding ElementName=SoundButton, Path=ActualWidth}" Height="{Binding ElementName=SoundButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=SoundData, ElementName=Root}" />
+                    </Canvas>
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="SoundButton"
+                                             Storyboard.TargetProperty="Width"
+                                             To="58"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+
+                                    <DoubleAnimation Storyboard.TargetName="SoundButton"
+                                             Storyboard.TargetProperty="Height"
+                                             To="50"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+
+                        <EventTrigger RoutedEvent="Button.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetName="SoundButton"
+                                             Storyboard.TargetProperty="Width"
+                                             To="38"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+
+                                    <DoubleAnimation Storyboard.TargetName="SoundButton"
+                                             Storyboard.TargetProperty="Height"
+                                             To="30"
+                                             Duration="0:0:0.1"
+                                             AutoReverse="False"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Button.Triggers>
+                </Button>
                 
                 <Button Name="FullScreenButton"
-                        Grid.Column="5"
+                        Grid.Column="6"
                         Grid.Row="0"
                         Width="30"
                         Height="30"
@@ -453,7 +509,7 @@
                         Visibility="{Binding Path=IsFullScreenEnabled, ElementName=Root, Converter={StaticResource BoolToVisConverter}}"
                         ToolTip="{Binding Path=FullScreenToolTipMessage, ElementName=Root}">
                     <Canvas Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}">
-                        <Path Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Data="{Binding Path=FullScreenData, ElementName=Root}" />
+                        <Path Width="{Binding ElementName=FullScreenButton, Path=ActualWidth}" Height="{Binding ElementName=FullScreenButton, Path=ActualHeight}" Stroke="Black" Stretch="Fill" Fill="Black" Data="{Binding Path=FullScreenData, ElementName=Root}" />
                     </Canvas>
                     <Button.Triggers>
                         <EventTrigger RoutedEvent="Button.MouseEnter">
