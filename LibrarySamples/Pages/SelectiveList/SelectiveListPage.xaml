@@ -10,6 +10,7 @@
       Title="SelectiveListPage">
 
     <Grid>
-        <myLibrary:SelectiveListUc></myLibrary:SelectiveListUc>
+        <myLibrary:SelectiveListUc AvailibleItems="{Binding Path=AvailibleItems}"
+                                   SelectedItems="{Binding Path=SelectedItems}"/>
     </Grid>
 </Page>

@@ -7,20 +7,22 @@
              d:DesignHeight="300" 
              d:DesignWidth="300"
              x:Name="Root">
-    <Grid>
-        <StackPanel Orientation="Horizontal">
-            <StackPanel Margin="10" VerticalAlignment="Center">
-                <Label Content="Availiable" 
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Margin="10" VerticalAlignment="Center">
+                    <Label Content="Availiable" 
                        HorizontalAlignment="Center"/>
-                <ListBox Width="100" 
+                    <ListBox Width="100" 
                          MinHeight="240"
-                         ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"/>
-            </StackPanel>
+                         ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"
+                         DisplayMemberPath="Name"/>
+                </StackPanel>
                 
-            <StackPanel VerticalAlignment="Center">
+                <StackPanel VerticalAlignment="Center" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
                 <Button Width="30" 
                         Height="20" 
-                        Margin="10">
+                        Margin="10"
+                        Command="{Binding Path=AddAllCommand}">
                     <Canvas Width="20" 
                             Height="20">
                         <Path FlowDirection="RightToLeft" 
@@ -67,7 +69,8 @@
                     
                 <Button Width="30" 
                         Height="20" 
-                        Margin="10">
+                        Margin="10"
+                        Command="{Binding RemoveAllCommand}">
                     <Canvas Width="20" 
                             Height="20">
                         <Path Width="20"
@@ -81,7 +84,7 @@
                 </Button>
             </StackPanel>
 
-            <StackPanel Margin="10" VerticalAlignment="Center">
+                <StackPanel Margin="10" VerticalAlignment="Center">
                 <Label Content="Selected" 
                        HorizontalAlignment="Center"/>
                 <ListBox Width="100" 
@@ -90,5 +93,5 @@
                          DisplayMemberPath="Name"/>
             </StackPanel>
         </StackPanel>
-    </Grid>
+        </Grid>
 </UserControl>

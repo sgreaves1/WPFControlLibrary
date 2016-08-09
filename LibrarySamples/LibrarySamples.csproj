@@ -73,9 +73,11 @@
       <DependentUpon>ProgressListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\ProgressList\ViewModel\ProgressListPageViewModel.cs" />
+    <Compile Include="Pages\SelectiveList\Model\SelectiveListModel.cs" />
     <Compile Include="Pages\SelectiveList\SelectiveListPage.xaml.cs">
       <DependentUpon>SelectiveListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\SelectiveList\ViewModel\SelectiveListViewModel.cs" />
     <Compile Include="Pages\SelectPanel\Model\SelectPanelModel.cs" />
     <Compile Include="Pages\SelectPanel\SelectPanelPage.xaml.cs">
       <DependentUpon>SelectPanelPage.xaml</DependentUpon>

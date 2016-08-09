@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LibrarySamples.Pages.SelectiveList.ViewModel;
 
 namespace LibrarySamples.Pages.SelectiveList
 {
@@ -23,6 +24,8 @@ namespace LibrarySamples.Pages.SelectiveList
         public SelectiveListPage()
         {
             InitializeComponent();
+
+            DataContext = new SelectiveListViewModel();
         }
     }
 }
