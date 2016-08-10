@@ -23,7 +23,7 @@ namespace MyLibrary
             DependencyProperty.Register("AvailibleItems", 
                 typeof(IEnumerable<ISelectiveListItem>), 
                 typeof(SelectiveListUc), 
-                new PropertyMetadata(null));
+                new PropertyMetadata(null, AvailableItemsChanged));
 
         /// <summary>
         /// Dependency Property for the <see cref="AvailibleItemsCount"/> property.
@@ -77,11 +77,7 @@ namespace MyLibrary
         public IEnumerable<ISelectiveListItem> AvailibleItems
         {
             get { return (IEnumerable<ISelectiveListItem>)GetValue(AvailibleItemsProperty); }
-            set
-            {
-                SetValue(AvailibleItemsProperty, value);
-                AvailibleItemsCount = AvailibleItems.Count();
-            }
+            set { SetValue(AvailibleItemsProperty, value); }
         }
 
         /// <summary>
@@ -122,6 +118,18 @@ namespace MyLibrary
         {
             get { return (Brush)GetValue(MyPropertyProperty); }
             set { SetValue(MyPropertyProperty, value); }
+        }
+
+        /// <summary>
+        /// Fires when available items changes
+        /// </summary>
+        /// <param name="dependencyObject"></param>
+        /// <param name="dependencyPropertyChangedEventArgs"></param>
+        private static void AvailableItemsChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        {
+            SelectiveListUc uc = (SelectiveListUc)dependencyObject;
+
+            uc.AvailibleItemsCount = uc.AvailibleItems.Count();
         }
 
         #region Commands
