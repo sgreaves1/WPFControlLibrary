@@ -6,12 +6,11 @@
       xmlns:local="clr-namespace:LibrarySamples.Pages.SelectiveList"
       xmlns:myLibrary="clr-namespace:MyLibrary;assembly=MyLibrary"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
       Title="SelectiveListPage">
 
     <Grid>
         <myLibrary:SelectiveListUc AvailibleItems="{Binding Path=AvailibleItems}"
                                    SelectedItems="{Binding Path=SelectedItems}"
-                                   Colour="SkyBlue"/>
+                                   Colour="Black"/>
     </Grid>
 </Page>

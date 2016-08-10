@@ -91,9 +91,61 @@ namespace MyLibrary
         public void InitCommands()
         {
             AddAllCommand = new RelayCommand(ExecuteAddAllCommand, CanExecuteAddAllCommand);
+            AddCommand = new RelayCommand(ExecuteAddCommand, CanExecuteAddCommand);
+            RemoveCommand = new RelayCommand(ExecuteRemoveCommand, CanExecuteCanExecuteRemoveCommand);
             RemoveAllCommand = new RelayCommand(ExecuteRemoveAllCommand, CanExecuteRemoveAllCommand);
         }
-        
+
+        private bool CanExecuteCanExecuteRemoveCommand()
+        {
+            if (SelectedListBox.SelectedItems.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ExecuteRemoveCommand()
+        {
+            var availible = AvailibleItems.ToList();
+            var selected = SelectedItems.ToList();
+
+            foreach (var selectedItem in SelectedListBox.SelectedItems)
+            {
+                selected.Remove((ISelectiveListItem)selectedItem);
+                availible.Add((ISelectiveListItem)selectedItem);
+            }
+
+            AvailibleItems = availible;
+            SelectedItems = selected;
+        }
+
+        private bool CanExecuteAddCommand()
+        {
+            if (AvailibleListBox.SelectedItems.Count > 0)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private void ExecuteAddCommand()
+        {
+            var availible = AvailibleItems.ToList();
+            var selected = SelectedItems.ToList();
+
+            foreach (var selectedItem in AvailibleListBox.SelectedItems)
+            {
+                availible.Remove((ISelectiveListItem) selectedItem);
+                selected.Add((ISelectiveListItem)selectedItem);
+            }
+
+            AvailibleItems = availible;
+            SelectedItems = selected;
+        }
+
         private bool CanExecuteAddAllCommand()
         {
             if (AvailibleItems != null && AvailibleItems.Any())

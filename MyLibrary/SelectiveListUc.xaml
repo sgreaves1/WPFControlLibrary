@@ -14,13 +14,14 @@
                            Foreground="{Binding ElementName=Root, Path=Colour}"/>
                 <TextBox BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"/>
-                    <ListBox Margin="0,-1,0,0"
+                    <ListBox x:Name="AvailibleListBox"
+                             Margin="0,-1,0,0"
                              MinHeight="240"
                              BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
-                         ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"
-                         DisplayMemberPath="Name"
-                             SelectionMode="Multiple"/>
+                             ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"
+                             DisplayMemberPath="Name"
+                             SelectionMode="Extended"/>
                 </StackPanel>
                 
                 <StackPanel VerticalAlignment="Center" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
@@ -46,7 +47,8 @@
                 <Button Width="30" 
                         Height="20" 
                         Margin="10"
-                        Background="Transparent">
+                        Background="Transparent"
+                        Command="{Binding Path=AddCommand}">
                     <Canvas Width="20" 
                             Height="20">
                         <Path FlowDirection="RightToLeft" 
@@ -63,7 +65,8 @@
                 <Button Width="30" 
                         Height="20" 
                         Margin="10"
-                        Background="Transparent">
+                        Background="Transparent"
+                        Command="{Binding Path=RemoveCommand}">
                     <Canvas Width="20" 
                             Height="20">
                         <Path Width="20" 
@@ -102,8 +105,8 @@
                 <TextBox BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
                          />
-                <ListBox Margin="0,-1,0,0" 
-                     
+                <ListBox x:Name="SelectedListBox"
+                         Margin="0,-1,0,0" 
                          MinHeight="240"
                          ItemsSource="{Binding ElementName=Root, Path=SelectedItems}"
                          DisplayMemberPath="Name"
