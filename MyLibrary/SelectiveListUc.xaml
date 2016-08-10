@@ -15,7 +15,8 @@
                 <TextBox BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
                          />
-                    <ListBox Width="100" 
+                    <ListBox Margin="0,-1,0,0"
+                        Width="100" 
                          MinHeight="240"
                              BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
@@ -101,7 +102,8 @@
                 <TextBox BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
                          />
-                <ListBox Width="100" 
+                <ListBox Margin="0,-1,0,0" 
+                    Width="100" 
                          MinHeight="240"
                          ItemsSource="{Binding ElementName=Root, Path=SelectedItems}"
                          DisplayMemberPath="Name"
