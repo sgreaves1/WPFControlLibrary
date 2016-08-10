@@ -22,6 +22,18 @@
                              ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"
                              DisplayMemberPath="Name"
                              SelectionMode="Extended"/>
+                    <Label HorizontalAlignment="Right">
+                        <Label.Content>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                <MultiBinding StringFormat="{} Selected: {0}/{1}">
+                                    <Binding ElementName="AvailibleListBox" Path="SelectedItems.Count" />
+                                    <Binding ElementName="Root" Path="AvailibleItemsCount" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                            </TextBlock>
+                        </Label.Content>
+                    </Label>
                 </StackPanel>
                 
                 <StackPanel VerticalAlignment="Center" DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}">
@@ -113,6 +125,18 @@
                          BorderBrush="{Binding ElementName=Root, Path=Colour}"
                          BorderThickness="1"
                          SelectionMode="Multiple"/>
+                <Label HorizontalAlignment="Right">
+                    <Label.Content>
+                        <TextBlock>
+                            <TextBlock.Text>
+                                <MultiBinding StringFormat="{} Selected: {0}/{1}">
+                                    <Binding ElementName="SelectedListBox" Path="SelectedItems.Count" />
+                                    <Binding ElementName="Root" Path="SelectedItemsCount" />
+                                </MultiBinding>
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Label.Content>
+                </Label>
             </StackPanel>
         </StackPanel>
         </Grid>

@@ -26,6 +26,15 @@ namespace MyLibrary
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// Dependency Property for the <see cref="AvailibleItemsCount"/> property.
+        /// </summary>
+        public static readonly DependencyProperty AvailibleItemsCountProperty =
+            DependencyProperty.Register("AvailibleItemsCount", 
+                typeof(int), 
+                typeof(SelectiveListUc), 
+                new PropertyMetadata(0));
+
+        /// <summary>
         /// Dependency property for the <see cref="SelectedItems"/> property.
         /// </summary>
         public static readonly DependencyProperty SelectedItemsProperty =
@@ -33,6 +42,15 @@ namespace MyLibrary
                 typeof(IEnumerable<ISelectiveListItem>),
                 typeof(SelectiveListUc),
                 new PropertyMetadata(null));
+
+        /// <summary>
+        /// Dependency Property for the <see cref="SelectedItemsCount"/> property.
+        /// </summary>
+        public static readonly DependencyProperty SelectedItemsCountProperty =
+            DependencyProperty.Register("SelectedItemsCount",
+                typeof(int),
+                typeof(SelectiveListUc),
+                new PropertyMetadata(0));
 
         /// <summary>
         /// Dependency Property for the <see cref="Colour"/> property.
@@ -59,7 +77,20 @@ namespace MyLibrary
         public IEnumerable<ISelectiveListItem> AvailibleItems
         {
             get { return (IEnumerable<ISelectiveListItem>)GetValue(AvailibleItemsProperty); }
-            set { SetValue(AvailibleItemsProperty, value); }
+            set
+            {
+                SetValue(AvailibleItemsProperty, value);
+                AvailibleItemsCount = AvailibleItems.Count();
+            }
+        }
+
+        /// <summary>
+        /// Stores the total number of available items
+        /// </summary>
+        public int AvailibleItemsCount
+        {
+            get { return (int)GetValue(AvailibleItemsCountProperty); }
+            set { SetValue(AvailibleItemsCountProperty, value); }
         }
 
         /// <summary>
@@ -68,7 +99,20 @@ namespace MyLibrary
         public IEnumerable<ISelectiveListItem> SelectedItems
         {
             get { return (IEnumerable<ISelectiveListItem>)GetValue(SelectedItemsProperty); }
-            set { SetValue(SelectedItemsProperty, value); }
+            set
+            {
+                SetValue(SelectedItemsProperty, value);
+                SelectedItemsCount = SelectedItems.Count();
+            }
+        }
+
+        /// <summary>
+        /// Stores the total number of selected items
+        /// </summary>
+        public int SelectedItemsCount
+        {
+            get { return (int)GetValue(SelectedItemsCountProperty); }
+            set { SetValue(SelectedItemsCountProperty, value); }
         }
 
         /// <summary>
