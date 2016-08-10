@@ -19,6 +19,24 @@ namespace LibrarySamples.Pages.SelectiveList.ViewModel
             AvailibleItems.Add(new SelectiveListModel("Matt"));
             AvailibleItems.Add(new SelectiveListModel("Justin"));
             AvailibleItems.Add(new SelectiveListModel("Mark"));
+            AvailibleItems.Add(new SelectiveListModel("Sam"));
+            AvailibleItems.Add(new SelectiveListModel("Liam"));
+            AvailibleItems.Add(new SelectiveListModel("David"));
+            AvailibleItems.Add(new SelectiveListModel("Matt"));
+            AvailibleItems.Add(new SelectiveListModel("Justin"));
+            AvailibleItems.Add(new SelectiveListModel("Mark"));
+            AvailibleItems.Add(new SelectiveListModel("Sam"));
+            AvailibleItems.Add(new SelectiveListModel("Liam"));
+            AvailibleItems.Add(new SelectiveListModel("David"));
+            AvailibleItems.Add(new SelectiveListModel("Matt"));
+            AvailibleItems.Add(new SelectiveListModel("Justin"));
+            AvailibleItems.Add(new SelectiveListModel("Mark"));
+            AvailibleItems.Add(new SelectiveListModel("Sam"));
+            AvailibleItems.Add(new SelectiveListModel("Liam"));
+            AvailibleItems.Add(new SelectiveListModel("David"));
+            AvailibleItems.Add(new SelectiveListModel("Matt"));
+            AvailibleItems.Add(new SelectiveListModel("Justin"));
+            AvailibleItems.Add(new SelectiveListModel("Mark"));
         }
 
         public ObservableCollection<ISelectiveListItem> AvailibleItems
