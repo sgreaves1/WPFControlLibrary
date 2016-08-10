@@ -41,7 +41,7 @@ namespace MyLibrary
             DependencyProperty.Register("SelectedItems",
                 typeof(IEnumerable<ISelectiveListItem>),
                 typeof(SelectiveListUc),
-                new PropertyMetadata(null));
+                new PropertyMetadata(null, SelectedItemsChanged));
 
         /// <summary>
         /// Dependency Property for the <see cref="SelectedItemsCount"/> property.
@@ -130,6 +130,18 @@ namespace MyLibrary
             SelectiveListUc uc = (SelectiveListUc)dependencyObject;
 
             uc.AvailibleItemsCount = uc.AvailibleItems.Count();
+        }
+
+        /// <summary>
+        /// Fires when selected items changes
+        /// </summary>
+        /// <param name="dependencyObject"></param>
+        /// <param name="dependencyPropertyChangedEventArgs"></param>
+        private static void SelectedItemsChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs dependencyPropertyChangedEventArgs)
+        {
+            SelectiveListUc uc = (SelectiveListUc)dependencyObject;
+
+            uc.SelectedItemsCount = uc.SelectedItems.Count();
         }
 
         #region Commands
