@@ -4,20 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" 
-             d:DesignWidth="300"
              x:Name="Root">
         <Grid>
             <StackPanel Orientation="Horizontal">
-                <StackPanel Margin="10" VerticalAlignment="Center">
+                <StackPanel Margin="10" VerticalAlignment="Center" Width="150">
                     <Label Content="Availiable" 
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                           FontWeight="Black"
+                           Foreground="{Binding ElementName=Root, Path=Colour}"/>
                 <TextBox BorderBrush="{Binding ElementName=Root, Path=Colour}"
-                             BorderThickness="1"
-                         />
+                             BorderThickness="1"/>
                     <ListBox Margin="0,-1,0,0"
-                        Width="100" 
-                         MinHeight="240"
+                             MinHeight="240"
                              BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
                          ItemsSource="{Binding ElementName=Root, Path=AvailibleItems}"
@@ -96,14 +94,16 @@
                 </Button>
             </StackPanel>
 
-                <StackPanel Margin="10" VerticalAlignment="Center">
+                <StackPanel Margin="10" VerticalAlignment="Center" Width="150">
                     <Label Content="Selected" 
-                       HorizontalAlignment="Center"/>
+                       HorizontalAlignment="Center"
+                           FontWeight="Black"
+                           Foreground="{Binding ElementName=Root, Path=Colour}"/>
                 <TextBox BorderBrush="{Binding ElementName=Root, Path=Colour}"
                              BorderThickness="1"
                          />
                 <ListBox Margin="0,-1,0,0" 
-                    Width="100" 
+                     
                          MinHeight="240"
                          ItemsSource="{Binding ElementName=Root, Path=SelectedItems}"
                          DisplayMemberPath="Name"
