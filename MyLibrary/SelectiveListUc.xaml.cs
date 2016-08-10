@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 using MyLibrary.Command;
 using MyLibrary.SelectiveList;
 
@@ -34,6 +35,15 @@ namespace MyLibrary
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// Dependency Property for the <see cref="Colour"/> property.
+        /// </summary>
+        public static readonly DependencyProperty MyPropertyProperty =
+            DependencyProperty.Register("Colour", 
+                typeof(Brush), 
+                typeof(SelectiveListUc),
+                new PropertyMetadata(Brushes.Black));
+        
+        /// <summary>
         /// Constructor
         /// </summary>
         public SelectiveListUc()
@@ -59,6 +69,15 @@ namespace MyLibrary
         {
             get { return (IEnumerable<ISelectiveListItem>)GetValue(SelectedItemsProperty); }
             set { SetValue(SelectedItemsProperty, value); }
+        }
+
+        /// <summary>
+        /// The colour of this selective list control
+        /// </summary>
+        public Brush Colour
+        {
+            get { return (Brush)GetValue(MyPropertyProperty); }
+            set { SetValue(MyPropertyProperty, value); }
         }
 
         #region Commands

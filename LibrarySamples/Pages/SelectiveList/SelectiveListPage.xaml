@@ -11,6 +11,7 @@
 
     <Grid>
         <myLibrary:SelectiveListUc AvailibleItems="{Binding Path=AvailibleItems}"
-                                   SelectedItems="{Binding Path=SelectedItems}"/>
+                                   SelectedItems="{Binding Path=SelectedItems}"
+                                   Colour="SkyBlue"/>
     </Grid>
 </Page>
