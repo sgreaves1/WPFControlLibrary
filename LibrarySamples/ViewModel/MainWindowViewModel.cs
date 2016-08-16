@@ -6,6 +6,7 @@ using LibrarySamples.Pages.Home;
 using LibrarySamples.Pages.MediaControl;
 using LibrarySamples.Pages.NumericUpDown;
 using LibrarySamples.Pages.ProgressList;
+using LibrarySamples.Pages.RotatingBusyIndicator;
 using LibrarySamples.Pages.SelectiveList;
 using LibrarySamples.Pages.SelectPanel;
 using MyLibrary.SelectPanel;
@@ -47,6 +48,11 @@ namespace LibrarySamples.ViewModel
                 ControlTitle = SelectedPage.Name;
                 switch (SelectedPage.Name)
                 {
+                    case "Busy Indicator":
+                        _currentPage = new RotatingBusyIndicatorPage();
+                        GoToPage();
+                        break;
+
                     case "Progress Bar List":
                         _currentPage = new ProgressListPage();
                         GoToPage();
@@ -81,6 +87,7 @@ namespace LibrarySamples.ViewModel
 
         public void GetModels()
         {
+            PageList.Add(new Model.Model("Busy Indicator"));
             PageList.Add(new Model.Model("Progress Bar List"));
             PageList.Add(new Model.Model("Media Control"));
             PageList.Add(new Model.Model("Numeric Up Down"));

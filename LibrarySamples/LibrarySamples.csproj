@@ -58,6 +58,9 @@
     <Compile Include="Command\DelegateCommand.cs" />
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Model\Model.cs" />
+    <Compile Include="Pages\RotatingBusyIndicator\RotatingBusyIndicatorPage.xaml.cs">
+      <DependentUpon>RotatingBusyIndicatorPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Home\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
@@ -98,6 +101,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\RotatingBusyIndicator\RotatingBusyIndicatorPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Home\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

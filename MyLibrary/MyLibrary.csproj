@@ -55,6 +55,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RotatingBusyIndicator.xaml.cs">
+      <DependentUpon>RotatingBusyIndicator.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Command\RelayCommand.cs" />
     <Compile Include="Converter\InvertableBooleanToVisibilityConverter.cs" />
     <Compile Include="DesignClasses\DesignProgressBarListItem.cs" />
@@ -78,6 +81,10 @@
       <DependentUpon>SelectPanelUc.xaml</DependentUpon>
     </Compile>
     <Compile Include="SelectPanel\IPanelItem.cs" />
+    <Page Include="RotatingBusyIndicator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MediaControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
