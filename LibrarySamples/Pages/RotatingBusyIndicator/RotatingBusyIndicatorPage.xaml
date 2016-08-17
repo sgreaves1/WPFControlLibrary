@@ -9,6 +9,7 @@
       Title="BusyIndicatorPage">
 
     <Grid>
-        <myLibrary:RotatingBusyIndicator/>
+        <!--<myLibrary:RotatingBusyIndicator/>-->
+        <myLibrary:LineBusyIndicator/>
     </Grid>
 </Page>

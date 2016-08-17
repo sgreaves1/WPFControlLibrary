@@ -26,6 +26,7 @@
                     </Path.Triggers>
                 </Path>
             </Canvas>
+
             <Label VerticalAlignment="Center" Content="Loading..."/>
             
         </StackPanel>
