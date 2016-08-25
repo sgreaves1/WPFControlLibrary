@@ -9,7 +9,7 @@
     <StackPanel Height="80">
         
     <StackPanel Height="50" Orientation="Horizontal">
-        <Rectangle Height="50" Width="10" Fill="Black" Margin="5,0,5,0">
+            <Rectangle Height="50" Width="10" Fill="Black" Margin="5,0,5,0" RadiusX="3" RadiusY="3">
             <Rectangle.Triggers>
                 <EventTrigger RoutedEvent="Rectangle.Loaded">
                     <BeginStoryboard>
@@ -22,8 +22,8 @@
 
             
         </Rectangle>
-        
-        <Rectangle Height="10" Width="10" Fill="Black" Margin="5,0,5,0">
+
+            <Rectangle Height="10" Width="10" Fill="Black" Margin="5,0,5,0" RadiusX="3" RadiusY="3">
             <Rectangle.Triggers>
                 <EventTrigger RoutedEvent="Rectangle.Loaded">
                     <BeginStoryboard>
@@ -36,7 +36,7 @@
             </Rectangle.Triggers>
             </Rectangle>
 
-        <Rectangle Height="20" Width="10" Fill="Black" Margin="5,0,5,0">
+            <Rectangle Height="20" Width="10" Fill="Black" Margin="5,0,5,0" RadiusX="3" RadiusY="3">
             <Rectangle.Triggers>
                 <EventTrigger RoutedEvent="Rectangle.Loaded">
                     <BeginStoryboard>
@@ -49,7 +49,7 @@
             </Rectangle.Triggers>
         </Rectangle>
 
-        <Rectangle Height="30" Width="10" Fill="Black" Margin="5,0,5,0">
+            <Rectangle Height="30" Width="10" Fill="Black" Margin="5,0,5,0" RadiusX="3" RadiusY="3">
             <Rectangle.Triggers>
                 <EventTrigger RoutedEvent="Rectangle.Loaded">
                     <BeginStoryboard>

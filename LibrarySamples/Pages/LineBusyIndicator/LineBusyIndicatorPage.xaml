@@ -1,13 +1,13 @@
-﻿<Page x:Class="LibrarySamples.Pages.RotatingBusyIndicator.RotatingBusyIndicatorPage"
+﻿<Page x:Class="LibrarySamples.Pages.LineBusyIndicator.LineBusyIndicatorPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:myLibrary="clr-namespace:MyLibrary;assembly=MyLibrary"
       mc:Ignorable="d" 
-      Title="RotatingBusyIndicatorPage">
+      Title="LineBusyIndicator">
 
     <Grid>
-        <myLibrary:RotatingBusyIndicator/>
+        <myLibrary:LineBusyIndicator/>
     </Grid>
 </Page>
