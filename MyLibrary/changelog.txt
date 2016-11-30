@@ -3,6 +3,7 @@ Release Notes - MyLibrary - Version 1.0.5.1
 ** New Feature
 	*[ 5] Media Control - Can set buttons data image
 	*[16] Progress Bar List - List orientation can be changed
+	*[30] Selective list control
 	*[58] Progress Bar List - Data can be changed for the delete button
 	*[59] Progress Bar List - Data can be changed for the add button
 
