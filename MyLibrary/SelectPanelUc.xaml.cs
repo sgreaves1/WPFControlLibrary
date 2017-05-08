@@ -41,6 +41,15 @@ namespace MyLibrary
                 new PropertyMetadata(50.0));
 
         /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty SearchVisibleProperty =
+            DependencyProperty.Register("SearchVisible", 
+                typeof(bool), 
+                typeof(SelectPanelUc), 
+                new PropertyMetadata(true));
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public SelectPanelUc()
@@ -77,6 +86,15 @@ namespace MyLibrary
         {
             get { return (double)GetValue(PanelHeightProperty); }
             set { SetValue(PanelHeightProperty, value); }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool SearchVisible
+        {
+            get { return (bool)GetValue(SearchVisibleProperty); }
+            set { SetValue(SearchVisibleProperty, value); }
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
