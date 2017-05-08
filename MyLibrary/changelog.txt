@@ -1,3 +1,9 @@
+Release Notes - MyLibrary - Version 1.0.5.2
+
+** New Feature
+	*[62] Select Panel - Can set height of panel
+	*[63] Select Panel - Can now scroll down panel
+
 Release Notes - MyLibrary - Version 1.0.5.1
 
 ** New Feature
