@@ -38,3 +38,7 @@ LibrarySamples/obj/Release/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B1
 LibrarySamples/bin/Debug/
 LibrarySamples/obj/Debug/
 LibrarySamples/bin/Release/
+*.suo
+MyLibrary/obj/
+LibrarySamples/obj/
+MyLibrary/bin/

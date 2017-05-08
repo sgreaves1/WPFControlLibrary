@@ -32,6 +32,15 @@ namespace MyLibrary
                 new PropertyMetadata(null));
 
         /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty PanelHeightProperty =
+            DependencyProperty.Register("PanelHeight", 
+                typeof(double), 
+                typeof(SelectPanelUc), 
+                new PropertyMetadata(50.0));
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public SelectPanelUc()
@@ -59,6 +68,15 @@ namespace MyLibrary
                 SetValue(SelectedItemProperty, value);
                 OnPropertyChanged();
             }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public double PanelHeight
+        {
+            get { return (double)GetValue(PanelHeightProperty); }
+            set { SetValue(PanelHeightProperty, value); }
         }
 
         private void ButtonBase_OnClick(object sender, RoutedEventArgs e)

@@ -9,6 +9,6 @@
       Title="SelectPanelPage">
 
     <Grid>
-        <myLibrary:SelectPanelUc ItemsSource="{Binding Path=Items}"/>
+        <myLibrary:SelectPanelUc ItemsSource="{Binding Path=Items}" />
     </Grid>
 </Page>
