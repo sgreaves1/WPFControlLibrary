@@ -1,6 +1,7 @@
 Release Notes - MyLibrary - Version 1.0.5.2
 
 ** New Feature
+	*[56] Select Panel - Ability to hide search bar
 	*[62] Select Panel - Can set height of panel
 	*[63] Select Panel - Can now scroll down panel
 

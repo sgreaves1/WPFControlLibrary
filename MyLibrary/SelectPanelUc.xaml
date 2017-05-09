@@ -25,7 +25,8 @@
         <TextBox Grid.Row="0" 
                  Grid.Column="0" 
                  Grid.ColumnSpan="2" 
-                 Visibility="{Binding ElementName=Root, Path=SearchVisible, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                 Visibility="{Binding ElementName=Root, Path=SearchVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                 Text="{Binding ElementName=Root, Path=SearchText, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Canvas Grid.Row="0" 
                     Grid.Column="2"
@@ -36,13 +37,13 @@
                   Canvas.Left="7.387"/>
             </Canvas>
 
-        <ListView Grid.Row="1" 
+        <ListBox Grid.Row="1" 
                   Grid.Column="0" 
                   Grid.ColumnSpan="3"
                   ItemsSource="{Binding Path=ItemsSource, ElementName=Root}"
                   SelectedItem="{Binding ElementName=Root, Path=SelectedItem}"
                   DisplayMemberPath="Name"
                   ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-        </ListView>
+        </ListBox>
     </Grid>
 </UserControl>

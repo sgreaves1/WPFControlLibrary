@@ -1,9 +1,5 @@
 ﻿using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
 using System.Windows;
-using System.Windows.Controls.Primitives;
-using MyLibrary.Annotations;
 using MyLibrary.SelectPanel;
 
 namespace MyLibrary
@@ -11,15 +7,15 @@ namespace MyLibrary
     /// <summary>
     /// Interaction logic for SelectPanelUc.xaml
     /// </summary>
-    public partial class SelectPanelUc : INotifyPropertyChanged
+    public partial class SelectPanelUc
     {
         /// <summary>
         /// 
         /// </summary>
         public static readonly DependencyProperty ItemsSourceProperty =
-            DependencyProperty.Register("ItemsSource", 
-                typeof(ObservableCollection<IPanelItem>), 
-                typeof(SelectPanelUc), 
+            DependencyProperty.Register("ItemsSource",
+                typeof(ObservableCollection<IPanelItem>),
+                typeof(SelectPanelUc),
                 new PropertyMetadata(null));
 
         /// <summary>
@@ -50,6 +46,15 @@ namespace MyLibrary
                 new PropertyMetadata(true));
 
         /// <summary>
+        /// 
+        /// </summary>
+        public static readonly DependencyProperty SearchTextProperty =
+            DependencyProperty.Register("SearchText", 
+                typeof(string), 
+                typeof(SelectPanelUc), 
+                new PropertyMetadata(""));
+
+        /// <summary>
         /// Constructor
         /// </summary>
         public SelectPanelUc()
@@ -75,7 +80,6 @@ namespace MyLibrary
             set
             {
                 SetValue(SelectedItemProperty, value);
-                OnPropertyChanged();
             }
         }
 
@@ -97,27 +101,13 @@ namespace MyLibrary
             set { SetValue(SearchVisibleProperty, value); }
         }
 
-        private void ButtonBase_OnClick(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 
+        /// </summary>
+        public string SearchText
         {
-            SelectedItem = (IPanelItem) ((ToggleButton) sender).DataContext;
-
-            SelectedItem.IsSelected = true;
-
-            foreach (var item in ItemsSource)
-            {
-                if (item != SelectedItem)
-                {
-                    item.IsSelected = false;
-                }
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            get { return (string)GetValue(SearchTextProperty); }
+            set { SetValue(SearchTextProperty, value); }
         }
     }
 }
